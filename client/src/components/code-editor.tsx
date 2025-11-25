@@ -75,19 +75,46 @@ export function CodeEditor({ value, onChange, diagramType }: CodeEditorProps) {
               monaco.languages.register({ id: 'plantuml' });
               
               monaco.languages.setMonarchTokensProvider('plantuml', {
+                defaultToken: '',
+                tokenPostfix: '.plantuml',
+                
+                keywords: [
+                  'startuml', 'enduml', 'class', 'interface', 'abstract', 'enum',
+                  'extends', 'implements', 'package', 'namespace', 'end',
+                  'actor', 'participant', 'database', 'entity', 'boundary', 'control',
+                  'activate', 'deactivate', 'destroy', 'create',
+                  'start', 'stop', 'if', 'then', 'else', 'elseif', 'endif', 'while', 'endwhile',
+                  'fork', 'again', 'repeat', 'partition', 'note', 'end note',
+                  'left', 'right', 'top', 'bottom', 'of', 'on', 'link', 'over',
+                  'title', 'header', 'footer', 'legend', 'endlegend', 'caption',
+                  'skinparam', 'hide', 'show', 'scale', 'rotate'
+                ],
+                
+                operators: [
+                  '->', '<-', '-->', '<--', '..>', '<..', '-|>', '<|-',
+                  '--', '..', '||', '|', '*', 'o', '#', '+', '-', '~'
+                ],
+                
                 tokenizer: {
                   root: [
-                    [/@startuml|@enduml/, 'keyword'],
-                    [/!theme|skinparam|title/, 'keyword'],
-                    [/class|interface|abstract|enum/, 'type'],
-                    [/extends|implements/, 'keyword'],
-                    [/public|private|protected/, 'keyword'],
-                    [/\+|\-|#|~/, 'operator'],
-                    [/".*?"/, 'string'],
-                    [/'.*?'/, 'string'],
-                    [/--|\.\.|->|<-/, 'operator'],
+                    [/\@\w+/, 'keyword'],
+                    [/!\w+/, 'keyword'],
+                    [/"[^"]*"/, 'string'],
+                    [/'[^']*'/, 'string'],
+                    [/\b(class|interface|abstract|enum|actor|participant|database|entity)\b/, 'type'],
+                    [/\b(extends|implements|package|namespace)\b/, 'keyword'],
+                    [/\b(if|then|else|elseif|endif|while|endwhile|fork|again|repeat)\b/, 'keyword'],
+                    [/\b(start|stop|activate|deactivate|destroy|create)\b/, 'keyword'],
+                    [/\b(note|end|left|right|top|bottom|of|on|over)\b/, 'keyword'],
+                    [/\b(title|header|footer|legend|caption|skinparam|hide|show|scale)\b/, 'keyword'],
+                    [/-->|<--|->|<-|\.\.>|<\.\.|\-\|>|<\|\-/, 'operator'],
+                    [/--|\.\.|::/, 'operator'],
+                    [/[{}()\[\]]/, 'delimiter.bracket'],
+                    [/[+\-#~]/, 'operator'],
                     [/\d+/, 'number'],
                     [/'.*$/, 'comment'],
+                    [/\s+/, 'white'],
+                    [/[a-zA-Z_]\w*/, 'identifier'],
                   ],
                 },
               });
@@ -96,7 +123,7 @@ export function CodeEditor({ value, onChange, diagramType }: CodeEditorProps) {
             // Set the language based on diagram type
             const model = editor.getModel();
             if (model && monaco) {
-              monaco.editor.setModelLanguage(model, diagramType === 'plantuml' ? 'plaintext' : 'plaintext');
+              monaco.editor.setModelLanguage(model, diagramType === 'plantuml' ? 'plantuml' : 'plaintext');
             }
           }}
         />
