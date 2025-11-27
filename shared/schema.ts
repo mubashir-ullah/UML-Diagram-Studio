@@ -39,7 +39,7 @@ export type ChatRequest = z.infer<typeof chatRequestSchema>;
 // Diagram compilation types
 export const compileRequestSchema = z.object({
   code: z.string(),
-  diagramType: z.enum(["plantuml", "mermaid"]).default("plantuml"),
+  diagramType: z.enum(["plantuml"]).default("plantuml"),
 });
 
 export type CompileRequest = z.infer<typeof compileRequestSchema>;
@@ -59,8 +59,8 @@ export type Template = z.infer<typeof templateSchema>;
 // Export types
 export const exportRequestSchema = z.object({
   code: z.string(),
-  format: z.enum(["png", "svg"]),
-  diagramType: z.enum(["plantuml", "mermaid"]).default("plantuml"),
+  format: z.enum(["png", "svg", "pdf", "txt"]),
+  diagramType: z.enum(["plantuml"]).default("plantuml"),
 });
 
 export type ExportRequest = z.infer<typeof exportRequestSchema>;
