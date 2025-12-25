@@ -56,3 +56,74 @@ export const promptTemplates: PromptTemplate[] = [
   },
 ];
 
+// PlantUML syntax guide for AI
+export const PLANTUML_SYNTAX_GUIDE = `
+PLANTUML SYNTAX RULES - CRITICAL:
+
+1. ALWAYS start with @startuml and end with @enduml
+2. NEVER use curly braces {} for component contents - components are standalone declarations
+3. NEVER use +-- or -- inside component/class declarations
+4. Use proper PlantUML syntax for each diagram type:
+
+CLASS DIAGRAM:
+@startuml
+class ClassName {
+  -attribute: type
+  +method()
+}
+ClassName1 --|> ClassName2 : extends
+@enduml
+
+COMPONENT DIAGRAM:
+@startuml
+component ComponentName
+component Component2
+ComponentName --> Component2 : uses
+@enduml
+
+SEQUENCE DIAGRAM:
+@startuml
+actor User
+participant System
+User -> System: message
+activate System
+System --> User: response
+deactivate System
+@enduml
+
+ACTIVITY DIAGRAM:
+@startuml
+start
+:activity;
+if (condition?) then (yes)
+  :action;
+else (no)
+  :other action;
+endif
+stop
+@enduml
+
+STATE DIAGRAM:
+@startuml
+[*] --> State1
+State1 --> State2 : event
+State2 --> [*]
+@enduml
+
+USE CASE DIAGRAM:
+@startuml
+actor User
+usecase UC1
+usecase UC2
+User --> UC1
+User --> UC2
+@enduml
+
+COMMON ERRORS TO AVOID:
+- DON'T: component Frontend { +--GUI-- }
+- DO: component Frontend
+- DON'T: class MyClass { +--method-- }
+- DO: class MyClass { +method() }
+- DON'T: Use invalid syntax like +--, --+, etc. inside declarations
+- DO: Use proper PlantUML syntax for relationships and declarations
+`;

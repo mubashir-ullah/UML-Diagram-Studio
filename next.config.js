@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    serverActions: {
-      bodySizeLimit: '2mb',
-    },
+  serverActions: {
+    bodySizeLimit: '2mb',
+  },
+  // Suppress service worker 404 warnings
+  async rewrites() {
+    return [];
   },
   webpack: (config, { isServer }) => {
     // Monaco Editor configuration

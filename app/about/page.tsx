@@ -1,6 +1,7 @@
 'use client';
 
 import { TopBar } from "@/components/top-bar";
+import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Mail } from "lucide-react";
@@ -17,22 +18,33 @@ export default function AboutPage() {
         currentCode=""
       />
       
-      <div className="flex-1 container mx-auto px-4 py-8 max-w-4xl">
-        <div className="mb-8">
+      <div className="flex-1 container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-4xl">
+        <div className="mb-6 sm:mb-8">
           <Link href="/">
-            <Button variant="ghost" size="sm" className="mb-6">
+            <Button variant="ghost" size="sm" className="mb-4 sm:mb-6">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Button>
           </Link>
-          <h1 className="text-4xl font-semibold mb-4">About UML Diagram Studio</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4">About UML Diagram Studio - Your Free UML Diagram Tool</h1>
         </div>
 
         {/* Main Content */}
-        <div className="space-y-8 mb-12">
+        <div className="space-y-6 sm:space-y-8 mb-8 sm:mb-12">
           {/* Introduction Section */}
           <section>
-            <h2 className="text-2xl font-semibold mb-4">What is UML Diagram Studio?</h2>
+            <div className="mb-4 sm:mb-6">
+              <div className="inline-block">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-card border border-border shadow-lg flex items-center justify-center p-2 sm:p-3 hover:shadow-xl transition-shadow">
+                  <img 
+                    src="/UML-Diagram.ico" 
+                    alt="UML Diagram Studio - Free UML Diagram Tool Icon" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">What is UML Diagram Studio?</h2>
             <div className="prose prose-sm max-w-none text-muted-foreground space-y-4">
               <p>
                 UML Diagram Studio is a cutting-edge, free online tool designed to help developers, 
@@ -52,7 +64,7 @@ export default function AboutPage() {
 
           {/* Origin Story Section */}
           <section>
-            <h2 className="text-2xl font-semibold mb-4">The Story Behind UML Diagram Studio</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">The Story Behind UML Diagram Studio</h2>
             <div className="prose prose-sm max-w-none text-muted-foreground space-y-4">
               <p>
                 Like many great ideas, UML Diagram Studio was born out of a real problem that needed solving. 
@@ -96,13 +108,13 @@ export default function AboutPage() {
 
           {/* Features Section */}
           <section>
-            <h2 className="text-2xl font-semibold mb-4">Key Features and Capabilities</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Key Features and Capabilities</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
                 UML Diagram Studio offers a comprehensive set of features that make diagram creation both efficient 
                 and enjoyable:
               </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
+              <ul className="list-disc list-inside space-y-2 ml-2 sm:ml-4">
                 <li>
                   <strong className="text-foreground">Real-Time Preview:</strong> See your diagrams update 
                   instantly as you type, with support for PlantUML and Mermaid syntax.
@@ -134,7 +146,7 @@ export default function AboutPage() {
 
           {/* Mission Section */}
           <section>
-            <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Our Mission</h2>
             <div className="prose prose-sm max-w-none text-muted-foreground space-y-4">
               <p>
                 At UML Diagram Studio, our mission is to democratize software diagramming by providing a free, 
@@ -153,12 +165,12 @@ export default function AboutPage() {
 
           {/* Use Cases Section */}
           <section>
-            <h2 className="text-2xl font-semibold mb-4">Who Can Benefit from UML Diagram Studio?</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Who Can Benefit from UML Diagram Studio?</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
                 UML Diagram Studio is designed for a wide range of users across the software development ecosystem:
               </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
+              <ul className="list-disc list-inside space-y-2 ml-2 sm:ml-4">
                 <li>
                   <strong className="text-foreground">Software Developers:</strong> Create class diagrams to 
                   visualize application architecture and relationships between components.
@@ -189,7 +201,7 @@ export default function AboutPage() {
 
           {/* Technology Section */}
           <section>
-            <h2 className="text-2xl font-semibold mb-4">Built with Modern Technology</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Built with Modern Technology</h2>
             <div className="prose prose-sm max-w-none text-muted-foreground space-y-4">
               <p>
                 UML Diagram Studio is built using cutting-edge web technologies to ensure a fast, responsive, 
@@ -206,21 +218,21 @@ export default function AboutPage() {
         </div>
 
         {/* Contact Section */}
-        <Card className="mb-8">
+        <Card className="mb-6 sm:mb-8">
           <CardHeader>
-            <CardTitle>Get in Touch</CardTitle>
-            <p className="text-sm text-muted-foreground mt-2">
+            <CardTitle className="text-lg sm:text-xl">Get in Touch</CardTitle>
+            <p className="text-xs sm:text-sm text-muted-foreground mt-2">
               We'd love to hear from you! Share your feedback, suggestions, or questions to help us improve UML Diagram Studio.
             </p>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-4 sm:space-y-6">
             <div>
-              <h3 className="text-lg font-semibold mb-3">Contact Information</h3>
-              <div className="flex items-center gap-3 mb-4">
-                <Mail className="w-5 h-5 text-muted-foreground" />
+              <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">Contact Information</h3>
+              <div className="flex items-center gap-2 sm:gap-3 mb-4">
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground flex-shrink-0" />
                 <a 
                   href="mailto:contact@umldiagramstudio.com" 
-                  className="text-primary hover:underline"
+                  className="text-primary hover:underline text-sm sm:text-base break-all"
                 >
                   contact@umldiagramstudio.com
                 </a>
@@ -228,10 +240,10 @@ export default function AboutPage() {
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
-              <div className="flex flex-wrap gap-3">
+              <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">Follow Us</h3>
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/mubashir-ullah/UML-Diagram-Studio"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-9 h-9 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 group"
@@ -336,38 +348,38 @@ export default function AboutPage() {
         </Card>
 
         {/* Developer Section */}
-        <Card className="mb-8">
+        <Card className="mb-6 sm:mb-8">
           <CardHeader>
-            <CardTitle>About the Developer</CardTitle>
+            <CardTitle className="text-lg sm:text-xl">About the Developer</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-start gap-4">
-              <div className="relative flex-shrink-0">
-                <Avatar className="w-28 h-28 border-2 border-border shadow-lg">
+            <div className="flex flex-col sm:flex-row items-start gap-4">
+              <div className="relative flex-shrink-0 mx-auto sm:mx-0">
+                <Avatar className="w-24 h-24 sm:w-28 sm:h-28 border-2 border-border shadow-lg">
                   <AvatarImage 
                     src="/Mubashir.png" 
                     alt="Mubashir" 
                     className="object-cover object-center"
                     loading="eager"
                   />
-                  <AvatarFallback className="text-xl font-semibold bg-muted">M</AvatarFallback>
+                  <AvatarFallback className="text-lg sm:text-xl font-semibold bg-muted">M</AvatarFallback>
                 </Avatar>
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold mb-2">Mubashir</h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <h3 className="text-base sm:text-lg font-semibold mb-2">Mubashir</h3>
+                <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">
                   UML Diagram Studio was created by Mubashir, a passionate developer dedicated to improving 
                   the software development workflow. With expertise in web development, AI/ML, and software 
                   architecture, this tool was built to serve the developer community.
                 </p>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">
                   I believe in open-source principles, continuous improvement, and listening to users. 
                   Your feedback drives my development priorities, and I'm always working to make UML Diagram 
                   Studio better. If you have suggestions, feature requests, or want to contribute to the project, 
                   I'd love to hear from you!
                 </p>
-                <div className="flex items-center gap-3 mt-4">
-                  <span className="text-sm font-medium text-foreground">Connect with me:</span>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mt-4">
+                  <span className="text-xs sm:text-sm font-medium text-foreground">Connect with me:</span>
                   <a
                     href="https://github.com/mubashir-ullah"
                     target="_blank"
@@ -410,17 +422,8 @@ export default function AboutPage() {
           </CardContent>
         </Card>
 
-        {/* Copyright Footer */}
-        <div className="border-t pt-6 mt-8 text-center text-sm text-muted-foreground">
-          <p>
-            © {new Date().getFullYear()} UML Diagram Studio. All rights reserved.
-          </p>
-          <p className="mt-2">
-            This tool is provided free of charge for educational and commercial use. 
-            UML Diagram Studio is not affiliated with the Object Management Group (OMG) or any UML specification body.
-          </p>
-        </div>
       </div>
+      <Footer />
     </div>
   );
 }

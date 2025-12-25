@@ -1,13 +1,13 @@
-import { generateUMLCodeWithOpenAI } from "./openai";
+import { generateUMLCodeWithGroq } from "./groq";
 
 /**
- * Generate UML code using OpenAI (ChatGPT)
- * Uses gpt-3.5-turbo by default for minimal token usage
+ * Generate UML code using Groq AI
+ * Fast, free tier with 14,400 requests/day
  */
 export async function generateUMLCode(
   userMessage: string,
   conversationHistory: Array<{ role: "user" | "assistant"; content: string }> = []
 ): Promise<{ content: string; codeSnippet?: string }> {
-  return generateUMLCodeWithOpenAI(userMessage, conversationHistory);
+  return await generateUMLCodeWithGroq(userMessage, conversationHistory);
 }
 

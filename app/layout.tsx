@@ -1,10 +1,63 @@
 import type { Metadata } from "next";
 import { Providers } from "@/components/providers";
+import Script from "next/script";
 import "./globals.css";
+import {
+  getOrganizationSchema,
+  getWebSiteSchema,
+  getSoftwareApplicationSchema,
+  generateStructuredDataScript,
+} from "@/lib/seo/structured-data";
+
+const SITE_URL = "https://umldiagram.app";
 
 export const metadata: Metadata = {
-  title: "UML Diagram Studio - AI-Powered Visual Diagramming Tool",
-  description: "Create beautiful UML diagrams with real-time preview and AI-powered code generation. Support for class, sequence, activity, and state diagrams with instant compilation.",
+  title: "UML Diagram - Free Online UML Diagram Tool | UML Diagram Studio",
+  description: "Create professional UML diagrams online for free. Our UML diagram tool supports class, sequence, activity, and use case diagrams. Start creating UML diagrams now!",
+  keywords: [
+    "uml diagram",
+    "uml diagram tool",
+    "uml diagram generator",
+    "uml diagram online",
+    "uml diagram maker",
+    "uml diagram creator",
+    "free uml diagram tool",
+    "create uml diagram",
+    "class diagram",
+    "sequence diagram",
+    "use case diagram",
+    "activity diagram",
+  ],
+  authors: [{ name: "Mubashir" }],
+  creator: "UML Diagram Studio",
+  publisher: "UML Diagram Studio",
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    title: "UML Diagram - Free Online UML Diagram Tool | UML Diagram Studio",
+    description: "Create professional UML diagrams online for free. Our UML diagram tool supports class, sequence, activity, and use case diagrams. Start creating UML diagrams now!",
+    url: SITE_URL,
+    siteName: "UML Diagram Studio",
+    type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/UML-Diagram.ico`,
+        width: 512,
+        height: 512,
+        alt: "UML Diagram Studio Logo",
+      },
+    ],
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "UML Diagram - Free Online UML Diagram Tool",
+    description: "Create professional UML diagrams online for free. Our UML diagram tool supports class, sequence, activity, and use case diagrams.",
+    images: [`${SITE_URL}/UML-Diagram.ico`],
+    creator: "@umldiagram",
+  },
   icons: {
     icon: [
       { url: "/UML-Diagram.ico", sizes: "any" },
@@ -12,6 +65,20 @@ export const metadata: Metadata = {
     ],
     shortcut: "/UML-Diagram.ico",
     apple: "/UML-Diagram.ico",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // Add verification codes here when available
   },
 };
 
@@ -33,7 +100,28 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generateStructuredDataScript(getOrganizationSchema()),
+          }}
+        />
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generateStructuredDataScript(getWebSiteSchema()),
+          }}
+        />
+        <Script
+          id="software-application-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generateStructuredDataScript(getSoftwareApplicationSchema()),
+          }}
+        />
         <Providers>{children}</Providers>
       </body>
     </html>

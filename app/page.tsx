@@ -6,7 +6,12 @@ import { DiagramPreview } from "@/components/diagram-preview";
 import { ChatSidebar } from "@/components/chat-sidebar";
 import { TopBar } from "@/components/top-bar";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
+import Script from "next/script";
 import type { ChatMessage } from "@shared/schema";
+import {
+  getFAQPageSchema,
+  generateStructuredDataScript,
+} from "@/lib/seo/structured-data";
 
 const DEFAULT_CODE = `@startuml
 !theme plain
@@ -103,8 +108,34 @@ export default function Home() {
     setRefreshKey(prev => prev + 1);
   }, [code]);
 
+  const faqSchema = getFAQPageSchema([
+    {
+      question: "What is a UML diagram?",
+      answer: "A UML diagram is a standardized visual representation used in software engineering to model, design, and document software systems. UML stands for Unified Modeling Language.",
+    },
+    {
+      question: "Is this UML diagram tool free?",
+      answer: "Yes, our UML diagram tool is completely free to use. You can create unlimited UML diagrams online without any restrictions or subscriptions.",
+    },
+    {
+      question: "What types of UML diagrams can I create?",
+      answer: "You can create class diagrams, sequence diagrams, activity diagrams, use case diagrams, state diagrams, component diagrams, and more using our UML diagram generator.",
+    },
+    {
+      question: "Do I need to install anything to use this UML diagram tool?",
+      answer: "No installation required! Our UML diagram tool works entirely in your web browser. Just open the website and start creating UML diagrams online.",
+    },
+  ]);
+
   return (
     <div className="flex flex-col h-screen w-full bg-background">
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateStructuredDataScript(faqSchema),
+        }}
+      />
       <TopBar
         onTemplateSelect={handleTemplateSelect}
         onToggleChat={() => setIsChatOpen(!isChatOpen)}
@@ -112,7 +143,7 @@ export default function Home() {
         currentCode={code}
       />
       
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1 overflow-hidden h-screen">
         <ResizablePanelGroup direction="horizontal" className="h-full">
           <ResizablePanel id="code-editor" order={1} defaultSize={40} minSize={25}>
             <CodeEditor

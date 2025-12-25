@@ -2,6 +2,8 @@
 
 import { useRef, useEffect } from "react";
 import Editor from "@monaco-editor/react";
+import type { Monaco } from "@monaco-editor/react";
+import type { editor } from "monaco-editor";
 import { FileCode, RefreshCw } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { Button } from "@/components/ui/button";
@@ -14,7 +16,7 @@ interface CodeEditorProps {
 
 export function CodeEditor({ value, onChange, onRefresh }: CodeEditorProps) {
   const { theme } = useTheme();
-  const editorRef = useRef(null);
+  const editorRef = useRef<editor.IStandaloneCodeEditor | null>(null);
 
   const handleEditorChange = (value: string | undefined) => {
     onChange(value || "");

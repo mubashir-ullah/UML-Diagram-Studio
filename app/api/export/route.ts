@@ -17,6 +17,29 @@ export async function POST(request: NextRequest) {
 
     const { code, format } = validation.data;
 
+    // Modify code to ensure white background for exports
+    // Replace transparent background with white background
+    let exportCode = code;
+    if (format !== "txt") {
+      // Replace transparent background with white
+      exportCode = exportCode.replace(
+        /skinparam\s+backgroundColor\s+transparent/gi,
+        'skinparam backgroundColor white'
+      );
+      // If no backgroundColor is set, add white background
+      if (!/skinparam\s+backgroundColor/gi.test(exportCode)) {
+        // Insert after @startuml or at the beginning if no @startuml
+        if (exportCode.includes('@startuml')) {
+          exportCode = exportCode.replace(
+            /(@startuml\s*\n?)/i,
+            '$1skinparam backgroundColor white\n'
+          );
+        } else {
+          exportCode = 'skinparam backgroundColor white\n' + exportCode;
+        }
+      }
+    }
+
     // Handle TXT format (raw code)
     if (format === "txt") {
       return new NextResponse(code, {
@@ -30,9 +53,9 @@ export async function POST(request: NextRequest) {
 
     // Handle PDF format - convert PNG to PDF
     if (format === "pdf") {
-      const encoded = encode(code);
+      const encoded = encode(exportCode);
       
-      // Get PNG version of the diagram
+      // Get PNG version of the diagram with white background
       const pngUrl = `https://www.plantuml.com/plantuml/png/${encoded}`;
       const pngResponse = await fetch(pngUrl);
       if (!pngResponse.ok) {
@@ -43,7 +66,7 @@ export async function POST(request: NextRequest) {
       const pngBase64 = Buffer.from(pngBuffer).toString('base64');
       const pngDataUrl = `data:image/png;base64,${pngBase64}`;
       
-      // Get SVG to determine dimensions
+      // Get SVG to determine dimensions (also with white background)
       const svgUrl = `https://www.plantuml.com/plantuml/svg/${encoded}`;
       const svgResponse = await fetch(svgUrl);
       let width = 800;
@@ -85,8 +108,8 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // Handle PNG and SVG formats
-    const encoded = encode(code);
+    // Handle PNG and SVG formats (with white background)
+    const encoded = encode(exportCode);
     const imageUrl = `https://www.plantuml.com/plantuml/${format}/${encoded}`;
     
     // Fetch the image and send it to client
@@ -95,14 +118,40 @@ export async function POST(request: NextRequest) {
       throw new Error("Failed to generate diagram");
     }
 
-    const buffer = await response.arrayBuffer();
+    let buffer: ArrayBuffer;
     let contentType: string;
+    
     if (format === "png") {
       contentType = "image/png";
+      buffer = await response.arrayBuffer();
     } else if (format === "svg") {
       contentType = "image/svg+xml";
+      // For SVG, ensure white background by modifying the SVG content
+      const svgText = await response.text();
+      // Add white background rectangle if not present
+      let modifiedSvg = svgText;
+      
+      // Check if there's a viewBox to determine dimensions
+      const viewBoxMatch = svgText.match(/viewBox="([^"]*)"/);
+      if (viewBoxMatch) {
+        const [, viewBox] = viewBoxMatch;
+        const [x, y, w, h] = viewBox.split(/\s+/).map(Number);
+        
+        // Check if white background rectangle already exists
+        if (!svgText.includes('<rect') || !svgText.match(/fill="white"|fill='white'/i)) {
+          // Insert white background rectangle after opening <svg> tag
+          const svgOpenMatch = svgText.match(/(<svg[^>]*>)/);
+          if (svgOpenMatch) {
+            const whiteRect = `\n  <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="white"/>\n`;
+            modifiedSvg = svgText.replace(/(<svg[^>]*>)/, `$1${whiteRect}`);
+          }
+        }
+      }
+      
+      buffer = Buffer.from(modifiedSvg, 'utf-8');
     } else {
       contentType = "application/octet-stream";
+      buffer = await response.arrayBuffer();
     }
     
     return new NextResponse(buffer, {

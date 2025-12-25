@@ -154,14 +154,14 @@ export function DiagramPreview({ code, refreshKey }: DiagramPreviewProps) {
 
   if (!mounted) {
     return (
-      <div className="flex flex-col h-full bg-muted/30">
+      <div className="flex flex-col h-full bg-gray-50">
         <div className="flex items-center justify-between px-4 h-10 border-b bg-card">
           <div className="flex items-center gap-2">
             <FileCode className="w-4 h-4 text-muted-foreground" />
             <span className="text-sm font-medium">Diagram Preview</span>
           </div>
         </div>
-        <div className="flex-1 overflow-auto p-4 flex items-center justify-center bg-muted/20">
+        <div className="flex-1 overflow-auto p-4 flex items-center justify-center bg-gray-50">
           <div className="flex flex-col items-center gap-3 text-center text-muted-foreground">
             <FileCode className="w-12 h-12 opacity-20" />
             <p className="text-sm">Loading...</p>
@@ -172,7 +172,7 @@ export function DiagramPreview({ code, refreshKey }: DiagramPreviewProps) {
   }
 
   return (
-    <div className="flex flex-col h-full bg-muted/30">
+    <div className="flex flex-col h-full bg-gray-50">
       <div className="flex items-center justify-between px-4 h-10 border-b bg-card">
         <div className="flex items-center gap-2">
           <FileCode className="w-4 h-4 text-muted-foreground" />
@@ -272,7 +272,7 @@ export function DiagramPreview({ code, refreshKey }: DiagramPreviewProps) {
 
       <div
         ref={containerRef}
-        className="flex-1 overflow-hidden p-4 bg-muted/20 relative"
+        className="flex-1 overflow-hidden p-4 bg-gray-50 relative"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
@@ -315,8 +315,8 @@ export function DiagramPreview({ code, refreshKey }: DiagramPreviewProps) {
               }}
             />
             </div>
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-center">
-              <p className="text-[10px] text-muted-foreground/60 bg-background/80 px-2 py-1 rounded">
+            <div className="absolute bottom-4 right-4 text-right">
+              <p className="text-[8px] text-muted-foreground/60 bg-background/80 px-2 py-1 rounded">
                 UML Diagram Studio © Copyright 2025 | Inspired by{' '}
                 <a
                   href="https://plantuml.com/"

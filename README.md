@@ -44,12 +44,22 @@ Whether you're working on class diagrams, sequence diagrams, activity diagrams, 
 - **Zoom Controls** - Adjust diagram view with zoom and pan functionality
 - **Template Categories** - Organized templates for Class, Sequence, Activity, State, and Use Case diagrams
 
+### 📊 SEO & Content Features
+
+- **🔍 SEO Optimized** - Fully optimized for search engines with proper metadata, structured data, and sitemap
+- **📝 Blog Section** - Comprehensive tutorials and guides on UML diagrams
+- **🖼️ Gallery** - Visual examples and detailed guides for different diagram types
+- **📧 Email Subscription** - Stay updated with new features and tutorials (Resend integration)
+- **🤖 AI Crawler Support** - Optimized for AI models (GPTBot, ClaudeBot, Google-Extended, etc.)
+- **🗺️ Dynamic Sitemap** - Automatically generated sitemap with all pages
+- **🔗 Internal Linking** - Strategic internal linking for better SEO
+
 ## 🎬 Getting Started
 
 ### Prerequisites
 
 - Node.js 18+ and npm/yarn/pnpm
-- An OpenAI API key (for AI features) - [Get one here](https://platform.openai.com/api-keys)
+- A Groq API key (for AI features) - [Get one here](https://console.groq.com) (Free tier available)
 
 ### Installation
 
@@ -72,8 +82,12 @@ Whether you're working on class diagrams, sequence diagrams, activity diagrams, 
    
    Create a `.env.local` file in the root directory:
    ```env
-   OPENAI_API_KEY=your_openai_api_key_here
-   OPENAI_MODEL=gpt-3.5-turbo  # Optional, defaults to gpt-3.5-turbo
+   GROQ_API_KEY=your_groq_api_key_here
+   GROQ_MODEL=llama-3.1-70b-versatile  # Optional, defaults to llama-3.1-70b-versatile
+   
+   # Optional: Email subscription (Resend)
+   RESEND_API_KEY=your_resend_api_key_here
+   RESEND_AUDIENCE_ID=your_audience_id_here  # Optional, will be created automatically if not provided
    ```
 
 4. **Run the development server**
@@ -155,21 +169,35 @@ User "1" -- "*" Post : creates
 ```
 UML-Diagram.app/
 ├── app/                    # Next.js app directory
-│   ├── about/             # About page
+│   ├── about/             # About page with SEO
 │   ├── api/               # API routes
 │   │   ├── chat/          # AI chat endpoint
 │   │   ├── compile/       # Diagram compilation
 │   │   ├── export/        # Export functionality
+│   │   ├── subscribe/     # Email subscription (Resend)
 │   │   └── templates/     # Template API
-│   └── page.tsx           # Main application page
+│   ├── blog/              # Blog section
+│   │   ├── [slug]/        # Individual blog posts
+│   │   └── page.tsx       # Blog listing page
+│   ├── gallery/           # Gallery section
+│   │   ├── [slug]/        # Individual diagram pages
+│   │   └── page.tsx       # Gallery listing page
+│   ├── layout.tsx         # Root layout with SEO metadata
+│   ├── page.tsx           # Main application page
+│   ├── robots.ts          # Robots.txt configuration
+│   └── sitemap.ts         # Dynamic sitemap generation
 ├── components/             # React components
 │   ├── chat-sidebar.tsx   # AI chat interface
 │   ├── code-editor.tsx    # Monaco editor wrapper
 │   ├── diagram-preview.tsx # Diagram renderer
-│   ├── top-bar.tsx        # Navigation bar
+│   ├── footer.tsx         # Footer with email subscription
+│   ├── top-bar.tsx        # Navigation bar with help dialog
 │   └── ui/                # shadcn/ui components
 ├── lib/                    # Utility libraries
 │   ├── ai.ts              # AI integration
+│   ├── groq.ts            # Groq API client
+│   ├── seo/               # SEO utilities
+│   │   └── structured-data.ts # JSON-LD schema generators
 │   ├── templates.ts       # Diagram templates
 │   └── utils.ts           # Helper functions
 ├── shared/                 # Shared types and schemas
@@ -189,9 +217,15 @@ UML-Diagram.app/
 - **[Framer Motion](https://www.framer.com/motion/)** - Animations
 
 ### Backend & AI
-- **[OpenAI API](https://platform.openai.com/)** - AI-powered code generation
+- **[Groq API](https://console.groq.com)** - Fast AI-powered code generation (Free tier available)
 - **[PlantUML](http://plantuml.com/)** - Diagram rendering engine
-- **[Drizzle ORM](https://orm.drizzle.team/)** - Database toolkit
+- **[Resend](https://resend.com)** - Email subscription service (Free tier: 3,000 emails/month)
+
+### SEO & Analytics
+- **Next.js Metadata API** - Built-in SEO optimization
+- **JSON-LD Structured Data** - Rich snippets for search engines
+- **Dynamic Sitemap** - Auto-generated XML sitemap
+- **AI Crawler Support** - Optimized for GPTBot, ClaudeBot, Google-Extended
 
 ### Development Tools
 - **[ESLint](https://eslint.org/)** - Code linting
@@ -244,7 +278,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [PlantUML](http://plantuml.com/) for the powerful diagram syntax
 - [shadcn](https://ui.shadcn.com/) for the beautiful component library
-- [OpenAI](https://openai.com/) for enabling AI-powered features
+- [Groq](https://console.groq.com) for fast, free AI-powered features
 - The open-source community for inspiration and support
 
 ## 📚 Resources
