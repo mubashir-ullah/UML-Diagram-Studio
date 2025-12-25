@@ -2,10 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   // Server Actions body size limit (Next.js 15 format)
-  experimental: {
-    serverActions: {
-      bodySizeLimit: '2mb',
-    },
+  serverActions: {
+    bodySizeLimit: '2mb',
   },
   // Suppress service worker 404 warnings
   async rewrites() {
