@@ -1,10 +1,6 @@
 import type { Config } from "tailwindcss";
-// @ts-ignore - ES module interop for CommonJS plugins
-import tailwindcssAnimate from "tailwindcss-animate";
-// @ts-ignore - ES module interop for CommonJS plugins
-import tailwindcssTypography from "@tailwindcss/typography";
 
-const config: Config = {
+export default {
   darkMode: ["class"],
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -111,7 +107,5 @@ const config: Config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate, tailwindcssTypography],
-};
-
-export default config;
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+} satisfies Config;
