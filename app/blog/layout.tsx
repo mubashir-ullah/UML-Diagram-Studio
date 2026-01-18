@@ -8,7 +8,7 @@ import {
 const SITE_URL = "https://umldiagram.app";
 
 export const metadata: Metadata = {
-  title: "UML Diagram Blog - Tutorials, Guides & Best Practices | UML Diagram Studio",
+  title: "UML Diagram Blog - Tutorials, Guides & Best Practices",
   description: "Learn how to create UML diagrams with our comprehensive guides, tutorials, and best practices. Master class diagrams, sequence diagrams, and more.",
   keywords: [
     "uml diagram",

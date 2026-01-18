@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -12,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "@/components/theme-provider";
-import { Moon, Sun, Bot, FileCode, Github, Layout, Menu, HelpCircle, ArrowRight, BookOpen, Image, Code } from "lucide-react";
+import { Moon, Sun, Bot, FileCode, Github, Layout, Menu, HelpCircle, ArrowRight, BookOpen, Image as ImageIcon, Code } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { cn } from "@/lib/utils";
 import type { Template } from "@shared/schema";
@@ -59,10 +60,12 @@ export function TopBar({
     <header className="flex items-center justify-between gap-2 sm:gap-4 px-2 sm:px-4 py-2 sm:py-3 border-b bg-card">
       <div className="flex items-center gap-2 sm:gap-4">
         <Link href="/" className="flex items-center gap-1.5 sm:gap-2 hover:opacity-80 transition-opacity">
-          <img 
-            src="/UML-Diagram.ico" 
-            alt="UML Diagram Studio Logo" 
-            className="w-4 h-4 sm:w-5 sm:h-5" 
+          <Image
+            src="/UML-Diagram.ico"
+            alt="UML Diagram Studio Logo"
+            width={20}
+            height={20}
+            className="w-4 h-4 sm:w-5 sm:h-5"
             data-testid="icon-logo"
           />
           <h1 className="text-sm sm:text-base font-semibold" data-testid="text-app-title">
@@ -105,11 +108,12 @@ export function TopBar({
         </DropdownMenu>
 
         <Dialog open={isHelpOpen} onOpenChange={setIsHelpOpen}>
-          <Button 
-            variant="outline" 
-            size="icon" 
+          <Button
+            variant="outline"
+            size="icon"
             className="h-7 w-7 sm:h-8 sm:w-8"
             onClick={() => setIsHelpOpen(true)}
+            aria-label="Help"
           >
             <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6" />
           </Button>
@@ -271,28 +275,28 @@ export function TopBar({
                 <h2 className="text-xl sm:text-2xl font-semibold mb-4">Key Features</h2>
                 <ul className="list-disc list-inside space-y-2 ml-2 text-muted-foreground">
                   <li>
-                    <strong className="text-foreground">Real-Time Preview:</strong> See your diagrams update 
+                    <strong className="text-foreground">Real-Time Preview:</strong> See your diagrams update
                     instantly as you type, with support for PlantUML and Mermaid syntax.
                   </li>
                   <li>
-                    <strong className="text-foreground">AI-Powered Code Generation:</strong> Our intelligent 
-                    AI assistant can generate UML diagram code from natural language, helping you create diagrams 
+                    <strong className="text-foreground">AI-Powered Code Generation:</strong> Our intelligent
+                    AI assistant can generate UML diagram code from natural language, helping you create diagrams
                     faster than ever before.
                   </li>
                   <li>
-                    <strong className="text-foreground">Multiple Diagram Types:</strong> Support for class diagrams, 
+                    <strong className="text-foreground">Multiple Diagram Types:</strong> Support for class diagrams,
                     sequence diagrams, activity diagrams, state diagrams, use case diagrams, and more.
                   </li>
                   <li>
-                    <strong className="text-foreground">Template Library:</strong> Access a curated collection of 
+                    <strong className="text-foreground">Template Library:</strong> Access a curated collection of
                     pre-built diagram templates to jumpstart your projects.
                   </li>
                   <li>
-                    <strong className="text-foreground">Export Options:</strong> Download your diagrams as PNG or 
+                    <strong className="text-foreground">Export Options:</strong> Download your diagrams as PNG or
                     SVG files for use in documentation, presentations, and reports.
                   </li>
                   <li>
-                    <strong className="text-foreground">Modern Interface:</strong> A clean, developer-focused design 
+                    <strong className="text-foreground">Modern Interface:</strong> A clean, developer-focused design
                     inspired by tools like VS Code and Linear, ensuring a familiar and productive experience.
                   </li>
                 </ul>
@@ -333,10 +337,10 @@ export function TopBar({
               <section>
                 <h2 className="text-xl sm:text-2xl font-semibold mb-4">Our Mission</h2>
                 <p className="text-muted-foreground">
-                  At UML Diagram Studio, our mission is to democratize software diagramming by providing a free, 
-                  accessible, and powerful tool that eliminates the barriers to creating professional UML diagrams. 
-                  We believe that visual documentation is essential for effective software development and communication, 
-                  and we're committed to making it easier for developers worldwide to create, share, and collaborate 
+                  At UML Diagram Studio, our mission is to democratize software diagramming by providing a free,
+                  accessible, and powerful tool that eliminates the barriers to creating professional UML diagrams.
+                  We believe that visual documentation is essential for effective software development and communication,
+                  and we're committed to making it easier for developers worldwide to create, share, and collaborate
                   on system designs.
                 </p>
               </section>
@@ -351,7 +355,7 @@ export function TopBar({
                   <Link href="/gallery" onClick={() => setIsHelpOpen(false)}>
                     <Button size="lg">
                       Browse Examples
-                      <Image className="ml-2 w-4 h-4" />
+                      <ImageIcon className="ml-2 w-4 h-4" />
                     </Button>
                   </Link>
                   <Link href="/blog" onClick={() => setIsHelpOpen(false)}>
@@ -419,6 +423,7 @@ export function TopBar({
             variant="ghost"
             size="icon"
             className="h-7 w-7 sm:h-8 sm:w-8"
+            aria-label="GitHub Repository"
           >
             <svg
               className="!w-4 !h-4 sm:!w-5 sm:!h-5"
@@ -439,7 +444,7 @@ export function TopBar({
       {/* Mobile Navigation Menu */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="icon" className="h-7 w-7 sm:h-8 sm:w-8 md:hidden">
+          <Button variant="ghost" size="icon" className="h-7 w-7 sm:h-8 sm:w-8 md:hidden" aria-label="Menu">
             <Menu className="w-4 h-4" />
           </Button>
         </DropdownMenuTrigger>
@@ -518,6 +523,7 @@ export function TopBar({
             onClick={toggleTheme}
             data-testid="button-theme-toggle"
             className="h-7 w-7 sm:h-8 sm:w-8"
+            aria-label="Toggle Theme"
           >
             {theme === "light" ? (
               <Moon className="w-4 h-4" />
@@ -531,6 +537,7 @@ export function TopBar({
             size="icon"
             data-testid="button-theme-toggle"
             className="h-7 w-7 sm:h-8 sm:w-8"
+            aria-label="Toggle Theme"
           >
             <Moon className="w-4 h-4" />
           </Button>

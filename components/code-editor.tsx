@@ -47,6 +47,7 @@ export function CodeEditor({ value, onChange, onRefresh }: CodeEditorProps) {
             onClick={handleRefresh}
             className="h-6 px-2 text-muted-foreground hover:text-foreground"
             title="Clear code"
+            aria-label="Clear code"
           >
             <RefreshCw className="w-3.5 h-3.5" />
           </Button>
@@ -95,7 +96,7 @@ export function CodeEditor({ value, onChange, onRefresh }: CodeEditorProps) {
           }}
           onMount={(editor) => {
             editorRef.current = editor;
-            
+
             // Ensure the language is set to PlantUML
             const monaco = (window as any).monaco;
             const model = editor.getModel();
@@ -107,11 +108,11 @@ export function CodeEditor({ value, onChange, onRefresh }: CodeEditorProps) {
             // Register PlantUML language before editor mounts
             if (!monaco.languages.getLanguages().some((lang: any) => lang.id === 'plantuml')) {
               monaco.languages.register({ id: 'plantuml' });
-              
+
               monaco.languages.setMonarchTokensProvider('plantuml', {
                 defaultToken: '',
                 tokenPostfix: '.plantuml',
-                
+
                 keywords: [
                   'startuml', 'enduml', 'class', 'interface', 'abstract', 'enum',
                   'extends', 'implements', 'package', 'namespace', 'end',
@@ -123,12 +124,12 @@ export function CodeEditor({ value, onChange, onRefresh }: CodeEditorProps) {
                   'title', 'header', 'footer', 'legend', 'endlegend', 'caption',
                   'skinparam', 'hide', 'show', 'scale', 'rotate'
                 ],
-                
+
                 operators: [
                   '->', '<-', '-->', '<--', '..>', '<..', '-|>', '<|-',
                   '--', '..', '||', '|', '*', 'o', '#', '+', '-', '~'
                 ],
-                
+
                 tokenizer: {
                   root: [
                     [/\@\w+/, 'keyword'],

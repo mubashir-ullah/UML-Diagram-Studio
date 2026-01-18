@@ -12,12 +12,12 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen w-full bg-background">
       <TopBar
-        onTemplateSelect={() => {}}
-        onToggleChat={() => {}}
+        onTemplateSelect={() => { }}
+        onToggleChat={() => { }}
         isChatOpen={false}
         currentCode=""
       />
-      
+
       <div className="flex-1 container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-4xl">
         <div className="mb-6 sm:mb-8">
           <Link href="/">
@@ -36,9 +36,9 @@ export default function AboutPage() {
             <div className="mb-4 sm:mb-6">
               <div className="inline-block">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-card border border-border shadow-lg flex items-center justify-center p-2 sm:p-3 hover:shadow-xl transition-shadow">
-                  <img 
-                    src="/UML-Diagram.ico" 
-                    alt="UML Diagram Studio - Free UML Diagram Tool Icon" 
+                  <img
+                    src="/UML-Diagram.ico"
+                    alt="UML Diagram Studio - Free UML Diagram Tool Icon"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -47,16 +47,16 @@ export default function AboutPage() {
             <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">What is UML Diagram Studio?</h2>
             <div className="prose prose-sm max-w-none text-muted-foreground space-y-4">
               <p>
-                UML Diagram Studio is a cutting-edge, free online tool designed to help developers, 
-                software architects, and technical professionals create professional UML (Unified Modeling Language) 
-                diagrams with ease. Our platform combines the power of AI-assisted code generation with real-time 
-                diagram preview, making it the go-to solution for anyone looking to visualize software architecture, 
+                UML Diagram Studio is a cutting-edge, free online tool designed to help developers,
+                software architects, and technical professionals create professional UML (Unified Modeling Language)
+                diagrams with ease. Our platform combines the power of AI-assisted code generation with real-time
+                diagram preview, making it the go-to solution for anyone looking to visualize software architecture,
                 system designs, and complex workflows.
               </p>
               <p>
-                Whether you're working on class diagrams, sequence diagrams, activity diagrams, or state diagrams, 
-                UML Diagram Studio provides an intuitive interface that supports both PlantUML and Mermaid syntax. 
-                Our AI-powered assistant can help you generate diagram code from natural language descriptions, 
+                Whether you're working on class diagrams, sequence diagrams, activity diagrams, or state diagrams,
+                UML Diagram Studio provides an intuitive interface that supports both PlantUML and Mermaid syntax.
+                Our AI-powered assistant can help you generate diagram code from natural language descriptions,
                 significantly reducing the time and effort required to create comprehensive UML diagrams.
               </p>
             </div>
@@ -67,40 +67,40 @@ export default function AboutPage() {
             <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">The Story Behind UML Diagram Studio</h2>
             <div className="prose prose-sm max-w-none text-muted-foreground space-y-4">
               <p>
-                Like many great ideas, UML Diagram Studio was born out of a real problem that needed solving. 
-                It all started during my final year as a computer science student, when I was working on my Final 
+                Like many great ideas, UML Diagram Studio was born out of a real problem that needed solving.
+                It all started during my final year as a computer science student, when I was working on my Final
                 Year Project (FYP) and faced the daunting task of creating comprehensive documentation.
               </p>
               <p>
-                As I sat down to document my project, I quickly realized that creating professional diagrams was 
-                one of the most challenging parts. I needed use case diagrams to show how users would interact 
-                with my system, sequence diagrams to illustrate the flow of operations, ERD diagrams to represent 
-                my database structure, and various other UML diagrams to communicate my design effectively. 
-                Each diagram required learning complex syntax, understanding the right tools, and spending hours 
+                As I sat down to document my project, I quickly realized that creating professional diagrams was
+                one of the most challenging parts. I needed use case diagrams to show how users would interact
+                with my system, sequence diagrams to illustrate the flow of operations, ERD diagrams to represent
+                my database structure, and various other UML diagrams to communicate my design effectively.
+                Each diagram required learning complex syntax, understanding the right tools, and spending hours
                 getting the formatting just right.
               </p>
               <p>
-                The frustration was real. I found myself spending more time trying to figure out how to create 
-                the diagrams than actually working on my project. The available tools were either too complex, 
-                required expensive licenses, or didn't provide the flexibility I needed. I thought to myself: 
+                The frustration was real. I found myself spending more time trying to figure out how to create
+                the diagrams than actually working on my project. The available tools were either too complex,
+                required expensive licenses, or didn't provide the flexibility I needed. I thought to myself:
                 "There has to be a better way."
               </p>
               <p>
-                That's when the idea struck me. What if there was a tool that could help students like me generate 
-                these diagrams easily? What if an AI assistant could understand what I wanted to create and help 
-                me build it step by step? What if I could describe my system in plain English and get a professional 
+                That's when the idea struck me. What if there was a tool that could help students like me generate
+                these diagrams easily? What if an AI assistant could understand what I wanted to create and help
+                me build it step by step? What if I could describe my system in plain English and get a professional
                 diagram in return?
               </p>
               <p>
-                This vision became the foundation of UML Diagram Studio. I wanted to create a platform that would 
-                eliminate the barriers between students and professional diagramming. A tool that would understand 
-                the struggles of documentation and provide an intuitive, AI-powered solution that makes creating 
+                This vision became the foundation of UML Diagram Studio. I wanted to create a platform that would
+                eliminate the barriers between students and professional diagramming. A tool that would understand
+                the struggles of documentation and provide an intuitive, AI-powered solution that makes creating
                 UML diagrams as simple as describing what you need.
               </p>
               <p>
-                Today, UML Diagram Studio stands as a testament to that initial frustration and the determination 
-                to solve it. It's built for students who are documenting their projects, developers who need to 
-                visualize their architecture, and anyone who believes that creating professional diagrams shouldn't 
+                Today, UML Diagram Studio stands as a testament to that initial frustration and the determination
+                to solve it. It's built for students who are documenting their projects, developers who need to
+                visualize their architecture, and anyone who believes that creating professional diagrams shouldn't
                 be a barrier to great documentation.
               </p>
             </div>
@@ -111,33 +111,32 @@ export default function AboutPage() {
             <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Key Features and Capabilities</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                UML Diagram Studio offers a comprehensive set of features that make diagram creation both efficient 
+                UML Diagram Studio offers a comprehensive set of features that make diagram creation both efficient
                 and enjoyable:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-2 sm:ml-4">
                 <li>
-                  <strong className="text-foreground">Real-Time Preview:</strong> See your diagrams update 
+                  <strong className="text-foreground">Real-Time Preview:</strong> See your diagrams update
                   instantly as you type, with support for PlantUML and Mermaid syntax.
                 </li>
                 <li>
-                  <strong className="text-foreground">AI-Powered Code Generation:</strong> Our intelligent 
-                  AI assistant can generate UML diagram code from natural language, helping you create diagrams 
+                  <strong className="text-foreground">AI-Powered Code Generation:</strong> Our intelligent
+                  AI assistant can generate UML diagram code from natural language, helping you create diagrams
                   faster than ever before.
                 </li>
                 <li>
-                  <strong className="text-foreground">Multiple Diagram Types:</strong> Support for class diagrams, 
-                  sequence diagrams, activity diagrams, state diagrams, use case diagrams, and more.
+                  <strong className="text-foreground">Multiple Diagram Types:</strong> Support for <Link href="/gallery/class-diagram" className="text-primary hover:underline">class diagrams</Link>, <Link href="/blog/mastering-sequence-diagrams" className="text-primary hover:underline">sequence diagrams</Link>, <Link href="/blog/activity-diagrams-for-workflow-modeling" className="text-primary hover:underline">activity diagrams</Link>, state diagrams, use case diagrams, and more.
                 </li>
                 <li>
-                  <strong className="text-foreground">Template Library:</strong> Access a curated collection of 
+                  <strong className="text-foreground">Template Library:</strong> Access a curated collection of
                   pre-built diagram templates to jumpstart your projects.
                 </li>
                 <li>
-                  <strong className="text-foreground">Export Options:</strong> Download your diagrams as PNG or 
+                  <strong className="text-foreground">Export Options:</strong> Download your diagrams as PNG or
                   SVG files for use in documentation, presentations, and reports.
                 </li>
                 <li>
-                  <strong className="text-foreground">Modern Interface:</strong> A clean, developer-focused design 
+                  <strong className="text-foreground">Modern Interface:</strong> A clean, developer-focused design
                   inspired by tools like VS Code and Linear, ensuring a familiar and productive experience.
                 </li>
               </ul>
@@ -149,15 +148,15 @@ export default function AboutPage() {
             <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Our Mission</h2>
             <div className="prose prose-sm max-w-none text-muted-foreground space-y-4">
               <p>
-                At UML Diagram Studio, our mission is to democratize software diagramming by providing a free, 
-                accessible, and powerful tool that eliminates the barriers to creating professional UML diagrams. 
-                We believe that visual documentation is essential for effective software development and communication, 
-                and we're committed to making it easier for developers worldwide to create, share, and collaborate 
+                At UML Diagram Studio, our mission is to democratize software diagramming by providing a free,
+                accessible, and powerful tool that eliminates the barriers to creating professional UML diagrams.
+                We believe that visual documentation is essential for effective software development and communication,
+                and we're committed to making it easier for developers worldwide to create, share, and collaborate
                 on system designs.
               </p>
               <p>
-                We're constantly working to improve our platform, adding new features, supporting additional 
-                diagram types, and enhancing the AI capabilities to make UML diagramming more accessible to everyone, 
+                We're constantly working to improve our platform, adding new features, supporting additional
+                diagram types, and enhancing the AI capabilities to make UML diagramming more accessible to everyone,
                 from students learning software engineering to experienced architects designing complex systems.
               </p>
             </div>
@@ -172,27 +171,27 @@ export default function AboutPage() {
               </p>
               <ul className="list-disc list-inside space-y-2 ml-2 sm:ml-4">
                 <li>
-                  <strong className="text-foreground">Software Developers:</strong> Create class diagrams to 
+                  <strong className="text-foreground">Software Developers:</strong> Create <Link href="/gallery/class-diagram" className="text-primary hover:underline">class diagrams</Link> to
                   visualize application architecture and relationships between components.
                 </li>
                 <li>
-                  <strong className="text-foreground">System Architects:</strong> Design and document complex 
-                  system interactions using sequence diagrams and activity diagrams.
+                  <strong className="text-foreground">System Architects:</strong> Design and document complex
+                  system interactions using <Link href="/blog/mastering-sequence-diagrams" className="text-primary hover:underline">sequence diagrams</Link> and <Link href="/blog/activity-diagrams-for-workflow-modeling" className="text-primary hover:underline">activity diagrams</Link>.
                 </li>
                 <li>
-                  <strong className="text-foreground">Project Managers:</strong> Use workflow diagrams to 
+                  <strong className="text-foreground">Project Managers:</strong> Use workflow diagrams to
                   communicate processes and project requirements to stakeholders.
                 </li>
                 <li>
-                  <strong className="text-foreground">Students and Educators:</strong> Learn UML diagramming 
+                  <strong className="text-foreground">Students and Educators:</strong> Learn UML diagramming
                   concepts with an intuitive tool that provides instant visual feedback.
                 </li>
                 <li>
-                  <strong className="text-foreground">Technical Writers:</strong> Generate professional diagrams 
+                  <strong className="text-foreground">Technical Writers:</strong> Generate professional diagrams
                   for documentation, tutorials, and technical guides.
                 </li>
                 <li>
-                  <strong className="text-foreground">Business Analysts:</strong> Model business processes and 
+                  <strong className="text-foreground">Business Analysts:</strong> Model business processes and
                   system requirements using various UML diagram types.
                 </li>
               </ul>
@@ -204,13 +203,13 @@ export default function AboutPage() {
             <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Built with Modern Technology</h2>
             <div className="prose prose-sm max-w-none text-muted-foreground space-y-4">
               <p>
-                UML Diagram Studio is built using cutting-edge web technologies to ensure a fast, responsive, 
-                and reliable experience. Our platform leverages React, Next.js, and TypeScript for a robust 
-                frontend, while our AI capabilities are powered by advanced language models that understand 
+                UML Diagram Studio is built using cutting-edge web technologies to ensure a fast, responsive,
+                and reliable experience. Our platform leverages React, Next.js, and TypeScript for a robust
+                frontend, while our AI capabilities are powered by advanced language models that understand
                 both natural language and UML syntax.
               </p>
               <p>
-                We're committed to maintaining high standards for performance, accessibility, and user experience, 
+                We're committed to maintaining high standards for performance, accessibility, and user experience,
                 ensuring that UML Diagram Studio remains a trusted tool for the developer community.
               </p>
             </div>
@@ -230,15 +229,15 @@ export default function AboutPage() {
               <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">Contact Information</h3>
               <div className="flex items-center gap-2 sm:gap-3 mb-4">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground flex-shrink-0" />
-                <a 
-                  href="mailto:contact@umldiagramstudio.com" 
+                <a
+                  href="mailto:contact@umldiagramstudio.com"
                   className="text-primary hover:underline text-sm sm:text-base break-all"
                 >
                   contact@umldiagramstudio.com
                 </a>
               </div>
             </div>
-            
+
             <div>
               <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">Follow Us</h3>
               <div className="flex flex-wrap gap-2 sm:gap-3">
@@ -272,7 +271,7 @@ export default function AboutPage() {
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                   >
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
                 </div>
                 <div
@@ -285,7 +284,7 @@ export default function AboutPage() {
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                   >
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                   </svg>
                 </div>
                 <div
@@ -298,7 +297,7 @@ export default function AboutPage() {
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                   >
-                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd"/>
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <div
@@ -311,7 +310,7 @@ export default function AboutPage() {
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                   >
-                    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd"/>
+                    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <div
@@ -324,7 +323,7 @@ export default function AboutPage() {
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                   >
-                    <path fillRule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.42 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.42-7.814.42-7.814.42s-6.255 0-7.814-.42a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.42-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clipRule="evenodd"/>
+                    <path fillRule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.42 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.42-7.814.42-7.814.42s-6.255 0-7.814-.42a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.42-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clipRule="evenodd" />
                   </svg>
                 </div>
               </div>
@@ -341,9 +340,9 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <div className="relative flex-shrink-0 mx-auto sm:mx-0">
                 <Avatar className="w-24 h-24 sm:w-28 sm:h-28 border-2 border-border shadow-lg">
-                  <AvatarImage 
-                    src="/Mubashir.png" 
-                    alt="Mubashir" 
+                  <AvatarImage
+                    src="/Mubashir.png"
+                    alt="Mubashir"
                     className="object-cover object-center"
                     loading="eager"
                   />
@@ -353,14 +352,14 @@ export default function AboutPage() {
               <div className="flex-1">
                 <h3 className="text-base sm:text-lg font-semibold mb-2">Mubashir</h3>
                 <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">
-                  UML Diagram Studio was created by Mubashir, a passionate developer dedicated to improving 
-                  the software development workflow. With expertise in web development, AI/ML, and software 
+                  UML Diagram Studio was created by Mubashir, a passionate developer dedicated to improving
+                  the software development workflow. With expertise in web development, AI/ML, and software
                   architecture, this tool was built to serve the developer community.
                 </p>
                 <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">
-                  I believe in open-source principles, continuous improvement, and listening to users. 
-                  Your feedback drives my development priorities, and I'm always working to make UML Diagram 
-                  Studio better. If you have suggestions, feature requests, or want to contribute to the project, 
+                  I believe in open-source principles, continuous improvement, and listening to users.
+                  Your feedback drives my development priorities, and I'm always working to make UML Diagram
+                  Studio better. If you have suggestions, feature requests, or want to contribute to the project,
                   I'd love to hear from you!
                 </p>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mt-4">
@@ -369,11 +368,11 @@ export default function AboutPage() {
                     href="https://github.com/mubashir-ullah"
                     target="_blank"
                     rel="noopener noreferrer"
-                  className="flex items-center justify-center w-9 h-9 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 group"
-                  aria-label="GitHub Profile"
-                >
-                  <svg
-                    className="w-6 h-6 text-foreground group-hover:text-primary transition-colors"
+                    className="flex items-center justify-center w-9 h-9 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 group"
+                    aria-label="GitHub Profile"
+                  >
+                    <svg
+                      className="w-6 h-6 text-foreground group-hover:text-primary transition-colors"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                       aria-hidden="true"
@@ -398,7 +397,7 @@ export default function AboutPage() {
                       viewBox="0 0 24 24"
                       aria-hidden="true"
                     >
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                     </svg>
                   </a>
                 </div>

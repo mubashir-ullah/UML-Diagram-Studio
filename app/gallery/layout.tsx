@@ -8,7 +8,7 @@ import {
 const SITE_URL = "https://umldiagram.app";
 
 export const metadata: Metadata = {
-  title: "UML Diagram Gallery - Examples and Templates | UML Diagram Studio",
+  title: "UML Diagram Gallery - Professional Examples & Templates",
   description: "Browse our collection of UML diagram examples with detailed information, use cases, components, and step-by-step guides on how to create them.",
   keywords: [
     "uml diagram",

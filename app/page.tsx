@@ -1,12 +1,22 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from "react";
-import { CodeEditor } from "@/components/code-editor";
-import { DiagramPreview } from "@/components/diagram-preview";
+import dynamic from "next/dynamic";
 import { ChatSidebar } from "@/components/chat-sidebar";
 import { TopBar } from "@/components/top-bar";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import Script from "next/script";
+
+const CodeEditor = dynamic(() => import("@/components/code-editor").then(mod => mod.CodeEditor), {
+  ssr: false,
+  loading: () => <div className="h-full w-full bg-muted/30 animate-pulse" />
+});
+
+const DiagramPreview = dynamic(() => import("@/components/diagram-preview").then(mod => mod.DiagramPreview), {
+  ssr: false,
+  loading: () => <div className="h-full w-full bg-background animate-pulse" />
+});
+
 import type { ChatMessage } from "@shared/schema";
 import {
   getFAQPageSchema,
@@ -142,7 +152,7 @@ export default function Home() {
         isChatOpen={isChatOpen}
         currentCode={code}
       />
-      
+
       <div className="flex-1 overflow-hidden h-screen">
         <ResizablePanelGroup direction="horizontal" className="h-full">
           <ResizablePanel id="code-editor" order={1} defaultSize={40} minSize={25}>
@@ -152,13 +162,13 @@ export default function Home() {
               onRefresh={handleRefresh}
             />
           </ResizablePanel>
-          
+
           <ResizableHandle className="w-1 bg-border hover-elevate" />
-          
+
           <ResizablePanel id="diagram-preview" order={2} defaultSize={isChatOpen ? 40 : 60} minSize={25}>
             <DiagramPreview code={code} refreshKey={refreshKey} />
           </ResizablePanel>
-          
+
           {isChatOpen && (
             <>
               <ResizableHandle className="w-1 bg-border hover-elevate" />
