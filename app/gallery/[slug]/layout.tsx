@@ -64,9 +64,9 @@ export async function generateMetadata({
       type: "article",
       images: [
         {
-          url: `${SITE_URL}/UML-Diagram.ico`,
-          width: 512,
-          height: 512,
+          url: `${SITE_URL}/og-image.png`,
+          width: 1200,
+          height: 630,
           alt: meta.title,
         },
       ],
@@ -75,7 +75,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: meta.title,
       description: meta.description,
-      images: [`${SITE_URL}/UML-Diagram.ico`],
+      images: [`${SITE_URL}/og-image.png`],
     },
   };
 }
@@ -147,7 +147,7 @@ export default async function GalleryDetailLayout({
               now,
               now,
               "Mubashir",
-              `${SITE_URL}/UML-Diagram.ico`
+              `${SITE_URL}/og-image.png`
             )
           ),
         }}

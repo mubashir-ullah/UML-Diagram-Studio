@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/UML-Diagram.ico`,
-        width: 512,
-        height: 512,
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
         alt: "UML Diagram Studio",
       },
     ],
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About UML Diagram Studio - Free UML Diagram Tool",
     description: "Learn about UML Diagram Studio, the free online UML diagram tool for creating professional diagrams with AI assistance.",
-    images: [`${SITE_URL}/UML-Diagram.ico`],
+    images: [`${SITE_URL}/og-image.png`],
   },
 };
 

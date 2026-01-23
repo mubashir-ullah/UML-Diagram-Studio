@@ -56,10 +56,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/UML-Diagram.ico`,
-        width: 512,
-        height: 512,
-        alt: "UML Diagram Studio Logo",
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "UML Diagram Studio - Free Online UML Diagram Tool",
       },
     ],
     locale: "en_US",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "UML Diagram - Free Online UML Diagram Tool",
     description: "Create professional UML diagrams online for free. Our UML diagram tool supports class, sequence, activity, and use case diagrams.",
-    images: [`${SITE_URL}/UML-Diagram.ico`],
+    images: [`${SITE_URL}/og-image.png`],
     creator: "@umldiagram",
   },
   icons: {
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Add verification codes here when available
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
   },
 };
 

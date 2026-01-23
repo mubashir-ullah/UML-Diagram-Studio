@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/UML-Diagram.ico`,
-        width: 512,
-        height: 512,
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
         alt: "UML Diagram Gallery",
       },
     ],
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "UML Diagram Gallery - Examples and Templates",
     description: "Browse our collection of UML diagram examples with detailed guides and step-by-step instructions.",
-    images: [`${SITE_URL}/UML-Diagram.ico`],
+    images: [`${SITE_URL}/og-image.png`],
   },
 };
 

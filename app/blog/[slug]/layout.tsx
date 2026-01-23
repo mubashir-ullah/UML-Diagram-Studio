@@ -162,7 +162,7 @@ export default async function BlogSlugLayout({
               publishedTime,
               modifiedTime,
               post.author,
-              `https://umldiagram.app/UML-Diagram.ico`
+              `https://umldiagram.app/og-image.png`
             )
           ),
         }}
