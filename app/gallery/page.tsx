@@ -8,6 +8,14 @@ import { ArrowLeft, Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 interface Diagram {
   id: string;
@@ -47,15 +55,22 @@ export default function GalleryPage() {
       
       <div className="flex-1 container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-7xl">
         <div className="mb-6 sm:mb-8">
-          <Link href="/">
-            <Button variant="ghost" size="sm" className="mb-4 sm:mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
+          <Breadcrumb className="mb-4 sm:mb-6">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Gallery</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-2 sm:mb-4">UML Diagram Gallery - Examples and Templates</h1>
           <p className="text-sm sm:text-base text-muted-foreground">
-            Browse our collection of UML diagram examples with detailed information, use cases, components, and step-by-step guides on how to create them.
+            Browse our collection of UML diagram examples with detailed information, use cases, components, and step-by-step guides on how to create them. Learn more in our <Link href="/blog" className="text-primary hover:underline">tutorials</Link> or read about <Link href="/blog/best-practices-for-class-diagrams" className="text-primary hover:underline">best practices</Link>.
           </p>
           <h2 className="text-xl font-semibold mb-4 mt-6">Class Diagram Examples</h2>
         </div>

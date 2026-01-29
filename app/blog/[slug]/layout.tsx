@@ -97,12 +97,14 @@ export async function generateMetadata({
 
   const url = `https://umldiagram.app/blog/${post.slug}`;
   const publishedTime = new Date(post.date).toISOString();
+  const SITE_URL = "https://umldiagram.app";
 
   return {
     title: `${post.title} | UML Diagram Studio Blog`,
     description: post.description,
     authors: [{ name: post.author }],
     keywords: post.tags,
+    metadataBase: new URL(SITE_URL),
     openGraph: {
       title: post.title,
       description: post.description,
@@ -112,11 +114,20 @@ export async function generateMetadata({
       publishedTime,
       authors: [post.author],
       tags: post.tags,
+      images: [
+        {
+          url: `${SITE_URL}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
+      images: [`${SITE_URL}/og-image.png`],
     },
     alternates: {
       canonical: url,

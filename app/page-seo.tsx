@@ -42,7 +42,7 @@ export function HomePageSEO() {
               UML diagrams are essential tools for software development because they provide a common language for communicating complex system designs. Whether you're working on a small project or a large enterprise application, UML diagrams help you understand relationships, interactions, and system architecture at a glance.
             </p>
             <p>
-              Our free UML diagram tool makes it easy to create professional UML diagrams online without any installation or setup. You can create class diagrams, sequence diagrams, activity diagrams, use case diagrams, and more using our intuitive interface and AI-powered code generation.
+              Our free UML diagram tool makes it easy to create professional UML diagrams online without any installation or setup. You can create <Link href="/gallery/class-diagram" className="text-primary hover:underline">class diagrams</Link>, <Link href="/blog/mastering-sequence-diagrams" className="text-primary hover:underline">sequence diagrams</Link>, <Link href="/blog/activity-diagrams-for-workflow-modeling" className="text-primary hover:underline">activity diagrams</Link>, use case diagrams, and more using our intuitive interface and AI-powered code generation. Explore our <Link href="/gallery" className="text-primary hover:underline">diagram gallery</Link> to see examples or read our <Link href="/blog" className="text-primary hover:underline">comprehensive tutorials</Link> to learn more.
             </p>
           </div>
         </section>
@@ -132,7 +132,7 @@ export function HomePageSEO() {
               <li>Export your diagram as PNG or SVG for use in documentation</li>
             </ol>
             <p>
-              Our UML diagram generator supports both PlantUML and Mermaid syntax, making it easy to create professional diagrams regardless of your experience level. Whether you're a beginner learning UML diagrams or an experienced developer, our tool provides everything you need to create high-quality UML diagrams.
+              Our UML diagram generator supports both PlantUML and Mermaid syntax, making it easy to create professional diagrams regardless of your experience level. Whether you're a beginner learning UML diagrams or an experienced developer, our tool provides everything you need to create high-quality UML diagrams. Check out our <Link href="/blog/getting-started-with-uml-diagrams" className="text-primary hover:underline">getting started guide</Link> for beginners or explore <Link href="/blog/best-practices-for-class-diagrams" className="text-primary hover:underline">best practices</Link> for advanced users.
             </p>
           </div>
           <Link href="/blog/getting-started-with-uml-diagrams">
@@ -183,7 +183,7 @@ export function HomePageSEO() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Create class diagrams, sequence diagrams, activity diagrams, use case diagrams, state diagrams, and more. Our UML diagram tool supports all major UML diagram types.
+                  Create <Link href="/gallery/class-diagram" className="text-primary hover:underline">class diagrams</Link>, <Link href="/blog/mastering-sequence-diagrams" className="text-primary hover:underline">sequence diagrams</Link>, <Link href="/blog/activity-diagrams-for-workflow-modeling" className="text-primary hover:underline">activity diagrams</Link>, <Link href="/blog/state-diagrams-modeling-system-behavior" className="text-primary hover:underline">state diagrams</Link>, and more. Our UML diagram tool supports all major UML diagram types. <Link href="/gallery" className="text-primary hover:underline">Browse examples</Link> or <Link href="/blog" className="text-primary hover:underline">read tutorials</Link>.
                 </p>
               </CardContent>
             </Card>
@@ -220,7 +220,7 @@ export function HomePageSEO() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  You can create class diagrams, sequence diagrams, activity diagrams, use case diagrams, state diagrams, component diagrams, and more using our UML diagram generator.
+                  You can create <Link href="/gallery/class-diagram" className="text-primary hover:underline">class diagrams</Link>, <Link href="/blog/mastering-sequence-diagrams" className="text-primary hover:underline">sequence diagrams</Link>, <Link href="/blog/activity-diagrams-for-workflow-modeling" className="text-primary hover:underline">activity diagrams</Link>, use case diagrams, <Link href="/blog/state-diagrams-modeling-system-behavior" className="text-primary hover:underline">state diagrams</Link>, component diagrams, and more using our UML diagram generator. Visit our <Link href="/gallery" className="text-primary hover:underline">gallery</Link> to see examples.
                 </p>
               </CardContent>
             </Card>

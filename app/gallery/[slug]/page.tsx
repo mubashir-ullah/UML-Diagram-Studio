@@ -10,6 +10,14 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 interface DiagramDetail {
   id: string;
@@ -304,12 +312,25 @@ export default function DiagramDetailPage() {
       
       <div className="flex-1 container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-5xl">
         <div className="mb-6 sm:mb-8">
-          <Link href="/gallery">
-            <Button variant="ghost" size="sm" className="mb-4 sm:mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Gallery
-            </Button>
-          </Link>
+          <Breadcrumb className="mb-4 sm:mb-6">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/gallery">Gallery</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{diagram.name}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
           <div className="flex items-start justify-between gap-4 mb-4">
             <div>
               <div className="flex items-center gap-3 mb-2">
@@ -592,6 +613,14 @@ export default function DiagramDetailPage() {
                         </p>
                       </div>
                     </Link>
+                    <Link href="/blog/ai-powered-diagram-generation" className="block">
+                      <div className="p-3 border rounded-lg hover:bg-accent transition-colors">
+                        <h4 className="font-semibold text-sm mb-1">AI-Powered Diagram Generation</h4>
+                        <p className="text-xs text-muted-foreground line-clamp-2">
+                          Discover how AI can help you create UML diagrams faster.
+                        </p>
+                      </div>
+                    </Link>
                   </>
                 )}
                 <Link href="/blog" className="block">
@@ -599,6 +628,42 @@ export default function DiagramDetailPage() {
                     View All Tutorials
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </Button>
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Explore More Section */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Explore More</CardTitle>
+              <CardDescription>Discover other diagram types and resources</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <Link href="/blog/mastering-sequence-diagrams" className="block">
+                  <div className="p-3 border rounded-lg hover:bg-accent transition-colors">
+                    <h4 className="font-semibold text-sm mb-1">Sequence Diagrams</h4>
+                    <p className="text-xs text-muted-foreground">Learn about sequence diagrams</p>
+                  </div>
+                </Link>
+                <Link href="/blog/activity-diagrams-for-workflow-modeling" className="block">
+                  <div className="p-3 border rounded-lg hover:bg-accent transition-colors">
+                    <h4 className="font-semibold text-sm mb-1">Activity Diagrams</h4>
+                    <p className="text-xs text-muted-foreground">Model workflows effectively</p>
+                  </div>
+                </Link>
+                <Link href="/blog/state-diagrams-modeling-system-behavior" className="block">
+                  <div className="p-3 border rounded-lg hover:bg-accent transition-colors">
+                    <h4 className="font-semibold text-sm mb-1">State Diagrams</h4>
+                    <p className="text-xs text-muted-foreground">Model system behavior</p>
+                  </div>
+                </Link>
+                <Link href="/gallery" className="block">
+                  <div className="p-3 border rounded-lg hover:bg-accent transition-colors">
+                    <h4 className="font-semibold text-sm mb-1">All Diagrams</h4>
+                    <p className="text-xs text-muted-foreground">Browse all diagram types</p>
+                  </div>
                 </Link>
               </div>
             </CardContent>

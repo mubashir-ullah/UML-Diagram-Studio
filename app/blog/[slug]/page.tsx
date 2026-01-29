@@ -3,11 +3,19 @@
 import { TopBar } from "@/components/top-bar";
 import { Footer } from "@/components/footer";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, ArrowLeft, BookOpen, Code, CheckCircle2 } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, BookOpen, Code, CheckCircle2, Image } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useParams } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 interface BlogPost {
   id: string;
@@ -784,13 +792,25 @@ export default function BlogDetailPage() {
               </Button>
             </Link>
             {/* Breadcrumb */}
-            <nav aria-label="breadcrumb" className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">
-              <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
-              <span>/</span>
-              <Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link>
-              <span>/</span>
-              <span className="text-foreground">{post.title}</span>
-            </nav>
+            <Breadcrumb className="hidden sm:flex">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href="/">Home</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href="/blog">Blog</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>{post.title}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
           </div>
 
           <div className="mb-6">
@@ -1058,7 +1078,7 @@ export default function BlogDetailPage() {
         {/* Related Posts Section */}
         <div className="mt-12 pt-8 border-t">
           <h2 className="text-2xl font-semibold mb-6">Related Posts</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {Object.values(blogPosts)
               .filter((p) => p.id !== post.id && (p.category === post.category || p.tags.some(tag => post.tags.includes(tag))))
               .slice(0, 3)
@@ -1080,6 +1100,68 @@ export default function BlogDetailPage() {
                   </Card>
                 </Link>
               ))}
+          </div>
+          {Object.values(blogPosts).filter((p) => p.id !== post.id && (p.category === post.category || p.tags.some(tag => post.tags.includes(tag)))).length === 0 && (
+            <div className="text-center py-8">
+              <p className="text-muted-foreground mb-4">Explore more UML diagram tutorials:</p>
+              <div className="flex flex-wrap gap-2 justify-center">
+                <Link href="/blog">
+                  <Button variant="outline">View All Blog Posts</Button>
+                </Link>
+                <Link href="/gallery">
+                  <Button variant="outline">Browse Diagram Gallery</Button>
+                </Link>
+                <Link href="/gallery/class-diagram">
+                  <Button variant="outline">Class Diagram Guide</Button>
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Explore More Section */}
+        <div className="mt-8 pt-8 border-t">
+          <h2 className="text-xl font-semibold mb-4">Explore More</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Link href="/gallery">
+              <Card className="h-full hover:shadow-md transition-shadow cursor-pointer">
+                <CardHeader>
+                  <CardTitle className="text-base flex items-center gap-2">
+                    <Image className="w-4 h-4" />
+                    Diagram Gallery
+                  </CardTitle>
+                  <CardDescription className="text-sm">
+                    Browse our collection of UML diagram examples and templates
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+            <Link href="/gallery/class-diagram">
+              <Card className="h-full hover:shadow-md transition-shadow cursor-pointer">
+                <CardHeader>
+                  <CardTitle className="text-base flex items-center gap-2">
+                    <Code className="w-4 h-4" />
+                    Class Diagrams
+                  </CardTitle>
+                  <CardDescription className="text-sm">
+                    Complete guide to UML class diagrams with examples
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+            <Link href="/blog">
+              <Card className="h-full hover:shadow-md transition-shadow cursor-pointer">
+                <CardHeader>
+                  <CardTitle className="text-base flex items-center gap-2">
+                    <BookOpen className="w-4 h-4" />
+                    All Tutorials
+                  </CardTitle>
+                  <CardDescription className="text-sm">
+                    Read all our UML diagram tutorials and guides
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
           </div>
         </div>
 

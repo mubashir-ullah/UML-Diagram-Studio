@@ -8,6 +8,14 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowLeft, X } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 interface BlogPost {
   id: string;
@@ -144,15 +152,22 @@ export default function BlogPage() {
       
       <div className="flex-1 container mx-auto px-4 py-8 max-w-6xl">
         <div className="mb-8">
-          <Link href="/">
-            <Button variant="ghost" size="sm" className="mb-4">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
+          <Breadcrumb className="mb-4">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Blog</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
           <h1 className="text-3xl font-semibold mb-2">UML Diagram Tutorials and Guides</h1>
           <p className="text-muted-foreground text-sm mb-4">
-            Learn how to create UML diagrams with our comprehensive guides, tutorials, and best practices. Master class diagrams, sequence diagrams, use case diagrams, and more.
+            Learn how to create UML diagrams with our comprehensive guides, tutorials, and best practices. Master <Link href="/gallery/class-diagram" className="text-primary hover:underline">class diagrams</Link>, <Link href="/blog/mastering-sequence-diagrams" className="text-primary hover:underline">sequence diagrams</Link>, use case diagrams, <Link href="/blog/activity-diagrams-for-workflow-modeling" className="text-primary hover:underline">activity diagrams</Link>, and more. Explore our <Link href="/gallery" className="text-primary hover:underline">diagram gallery</Link> for examples.
           </p>
           <h2 className="text-xl font-semibold mb-4 mt-6">Learn How to Create UML Diagrams</h2>
           

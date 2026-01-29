@@ -7,6 +7,14 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Mail } from "lucide-react";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 export default function AboutPage() {
   return (
@@ -20,12 +28,19 @@ export default function AboutPage() {
 
       <div className="flex-1 container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-4xl">
         <div className="mb-6 sm:mb-8">
-          <Link href="/">
-            <Button variant="ghost" size="sm" className="mb-4 sm:mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
+          <Breadcrumb className="mb-4 sm:mb-6">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>About</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4">About UML Diagram Studio - Your Free UML Diagram Tool</h1>
         </div>
 
