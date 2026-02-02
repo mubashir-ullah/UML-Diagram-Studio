@@ -5,8 +5,7 @@ import {
   getFAQPageSchema,
   generateStructuredDataScript,
 } from "@/lib/seo/structured-data";
-
-const SITE_URL = "https://umldiagram.app";
+import { SITE_URL } from "@/lib/seo/config";
 
 export const metadata: Metadata = {
   title: "UML Diagram Studio - AI Powered UML Diagram Generation Tool",

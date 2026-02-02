@@ -9,6 +9,7 @@ import {
   getSoftwareApplicationSchema,
   generateStructuredDataScript,
 } from "@/lib/seo/structured-data";
+import { SITE_URL } from "@/lib/seo/config";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,10 +23,11 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const SITE_URL = "https://umldiagram.app";
-
 export const metadata: Metadata = {
-  title: "UML Diagram Studio - AI Powered UML Diagram Generation Tool",
+  title: {
+    default: "UML Diagram Studio - AI Powered UML Diagram Generation Tool",
+    template: "%s | UML Diagram Studio",
+  },
   description: "Create professional UML diagrams online for free. Our tool supports class, sequence, activity, and use case diagrams. Start creating UML diagrams now!",
   keywords: [
     "uml diagram",

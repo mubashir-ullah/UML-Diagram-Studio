@@ -9,6 +9,7 @@ import { Mail, Check } from "lucide-react";
 import {
   generateStructuredDataScript,
 } from "@/lib/seo/structured-data";
+import { SITE_URL } from "@/lib/seo/config";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -56,7 +57,7 @@ export function Footer() {
     "@context": "https://schema.org",
     "@type": "SiteNavigationElement",
     name: "Main Navigation",
-    url: "https://umldiagram.app",
+    url: SITE_URL,
   };
 
   return (

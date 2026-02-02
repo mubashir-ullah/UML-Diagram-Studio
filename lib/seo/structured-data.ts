@@ -1,4 +1,4 @@
-const SITE_URL = "https://umldiagram.app";
+import { SITE_URL } from "./config";
 
 export interface OrganizationSchema {
   "@context": string;

@@ -5,6 +5,7 @@ import {
   getBreadcrumbListSchema,
   generateStructuredDataScript,
 } from "@/lib/seo/structured-data";
+import { SITE_URL } from "@/lib/seo/config";
 
 interface BlogPost {
   id: string;
@@ -92,12 +93,12 @@ export async function generateMetadata({
     return {
       title: "Blog Post Not Found | UML Diagram Studio",
       description: "The requested blog post could not be found.",
+      robots: { index: false, follow: true },
     };
   }
 
-  const url = `https://umldiagram.app/blog/${post.slug}`;
+  const url = `${SITE_URL}/blog/${post.slug}`;
   const publishedTime = new Date(post.date).toISOString();
-  const SITE_URL = "https://umldiagram.app";
 
   return {
     title: `${post.title} | UML Diagram Studio Blog`,
@@ -149,13 +150,13 @@ export default async function BlogSlugLayout({
     return <>{children}</>;
   }
 
-  const url = `https://umldiagram.app/blog/${post.slug}`;
+  const url = `${SITE_URL}/blog/${post.slug}`;
   const publishedTime = new Date(post.date).toISOString();
   const modifiedTime = new Date(post.date).toISOString();
 
   const breadcrumbs = [
-    { name: "Home", url: "https://umldiagram.app" },
-    { name: "Blog", url: "https://umldiagram.app/blog" },
+    { name: "Home", url: SITE_URL },
+    { name: "Blog", url: `${SITE_URL}/blog` },
     { name: post.title, url },
   ];
 
@@ -173,7 +174,7 @@ export default async function BlogSlugLayout({
               publishedTime,
               modifiedTime,
               post.author,
-              `https://umldiagram.app/og-image.png`
+              `${SITE_URL}/og-image.png`
             )
           ),
         }}

@@ -1,6 +1,5 @@
 import { MetadataRoute } from "next";
-
-const SITE_URL = "https://umldiagram.app";
+import { SITE_URL } from "@/lib/seo/config";
 
 export default function robots(): MetadataRoute.Robots {
   return {

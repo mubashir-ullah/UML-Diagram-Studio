@@ -5,8 +5,7 @@ import {
   getArticleSchema,
   generateStructuredDataScript,
 } from "@/lib/seo/structured-data";
-
-const SITE_URL = "https://umldiagram.app";
+import { SITE_URL } from "@/lib/seo/config";
 
 const diagramMetadata: Record<
   string,
@@ -43,6 +42,7 @@ export async function generateMetadata({
     return {
       title: "Diagram Not Found | UML Diagram Studio",
       description: "The requested diagram could not be found.",
+      robots: { index: false, follow: true },
     };
   }
 
