@@ -3,12 +3,19 @@ import type { NextRequest } from "next/server";
 
 /**
  * SEO middleware: normalizes URLs for consistent indexing.
+ * - Redirects HTTP to HTTPS (required for good page experience)
  * - Redirects www to non-www
  * - Redirects trailing slash to no trailing slash (except for root /)
  */
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   let redirect = false;
+
+  // HTTP → HTTPS (required for HTTPS to be evaluated by search engines)
+  if (url.protocol === "http:") {
+    url.protocol = "https:";
+    return NextResponse.redirect(url, 301);
+  }
 
   // www → non-www
   if (url.hostname === "www.umldiagram.app") {
