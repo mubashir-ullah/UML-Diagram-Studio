@@ -131,6 +131,12 @@ export default function RootLayout({
             __html: generateStructuredDataScript(getSoftwareApplicationSchema()),
           }}
         />
+        {/* Google AdSense */}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7603836772359035"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-1KVJ6FZ5L5"
