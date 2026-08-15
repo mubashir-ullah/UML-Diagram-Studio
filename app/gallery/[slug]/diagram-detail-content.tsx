@@ -30,7 +30,7 @@ export function DiagramDetailContent({ slug }: { slug: string }) {
   const handleOpenInStudio = () => {
     if (typeof window !== 'undefined' && diagram) {
       localStorage.setItem(STORAGE_KEY, diagram.exampleCode);
-      router.push('/');
+      router.push("/studio");
     }
   };
 

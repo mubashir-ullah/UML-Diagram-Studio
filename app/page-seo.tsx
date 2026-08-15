@@ -16,7 +16,7 @@ export function HomePageSEO() {
             Create professional UML diagrams online for free. Our UML diagram tool supports class diagrams, sequence diagrams, activity diagrams, and use case diagrams. Start creating UML diagrams now with our free UML diagram generator!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#editor">
+            <Link href="/studio">
               <Button size="lg" className="w-full sm:w-auto">
                 Open the free UML diagram tool
                 <ArrowRight className="ml-2 w-4 h-4" />
@@ -288,7 +288,7 @@ export function HomePageSEO() {
             Start using our free UML diagram tool now. No sign-up required, no credit card needed. Create professional UML diagrams in minutes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#editor">
+            <Link href="/studio">
               <Button size="lg">
                 Open the free UML diagram tool
                 <ArrowRight className="ml-2 w-4 h-4" />

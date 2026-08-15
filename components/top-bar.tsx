@@ -374,7 +374,7 @@ export function TopBar({
       </div>
 
       <div className="hidden md:flex items-center gap-2 lg:gap-4 flex-1 justify-center">
-        <Link href="/">
+        <Link href="/studio">
           <Button
             variant="ghost"
             size="sm"
@@ -462,7 +462,7 @@ export function TopBar({
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-48">
           <DropdownMenuItem asChild>
-            <Link href="/" className="flex items-center">
+            <Link href="/studio" className="flex items-center">
               <Layout className="w-4 h-4 mr-2" />
               Studio
             </Link>
