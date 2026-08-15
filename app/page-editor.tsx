@@ -114,7 +114,7 @@ export function PageEditor() {
   }, [code]);
 
   return (
-    <div className="flex flex-col h-screen w-full bg-background">
+    <div id="editor" className="flex flex-col h-screen w-full bg-background">
       <TopBar
         onTemplateSelect={handleTemplateSelect}
         onToggleChat={() => setIsChatOpen(!isChatOpen)}

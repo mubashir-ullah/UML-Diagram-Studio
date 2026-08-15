@@ -16,8 +16,14 @@ export function HomePageSEO() {
             Create professional UML diagrams online for free. Our UML diagram tool supports class diagrams, sequence diagrams, activity diagrams, and use case diagrams. Start creating UML diagrams now with our free UML diagram generator!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/gallery">
+            <Link href="#editor">
               <Button size="lg" className="w-full sm:w-auto">
+                Open the free UML diagram tool
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
+            <Link href="/gallery">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto">
                 Explore Diagram Gallery
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
@@ -42,7 +48,7 @@ export function HomePageSEO() {
               UML diagrams are essential tools for software development because they provide a common language for communicating complex system designs. Whether you're working on a small project or a large enterprise application, UML diagrams help you understand relationships, interactions, and system architecture at a glance.
             </p>
             <p>
-              Our free UML diagram tool makes it easy to create professional UML diagrams online without any installation or setup. You can create <Link href="/gallery/class-diagram" className="text-primary hover:underline">class diagrams</Link>, <Link href="/blog/mastering-sequence-diagrams" className="text-primary hover:underline">sequence diagrams</Link>, <Link href="/blog/activity-diagrams-for-workflow-modeling" className="text-primary hover:underline">activity diagrams</Link>, use case diagrams, and more using our intuitive interface and AI-powered code generation. Explore our <Link href="/gallery" className="text-primary hover:underline">diagram gallery</Link> to see examples or read our <Link href="/blog" className="text-primary hover:underline">comprehensive tutorials</Link> to learn more.
+              Our free UML diagram tool makes it easy to create professional UML diagrams online without any installation or setup. You can create <Link href="/gallery/class-diagram" className="text-primary hover:underline">class diagrams</Link>, <Link href="/gallery/sequence-diagram" className="text-primary hover:underline">sequence diagrams</Link>, <Link href="/gallery/activity-diagram" className="text-primary hover:underline">activity diagrams</Link>, <Link href="/gallery/use-case-diagram" className="text-primary hover:underline">use case diagrams</Link>, and more using our intuitive interface and AI-powered code generation. Explore our <Link href="/gallery" className="text-primary hover:underline">diagram gallery</Link> to see examples or read our <Link href="/blog" className="text-primary hover:underline">comprehensive tutorials</Link> to learn more.
             </p>
           </div>
         </section>
@@ -78,8 +84,8 @@ export function HomePageSEO() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Link href="/blog/mastering-sequence-diagrams" className="text-primary hover:underline text-sm">
-                  Learn Sequence Diagrams →
+                <Link href="/gallery/sequence-diagram" className="text-primary hover:underline text-sm">
+                  View Sequence Diagram Examples →
                 </Link>
               </CardContent>
             </Card>
@@ -94,7 +100,9 @@ export function HomePageSEO() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">Coming soon</p>
+                <Link href="/gallery/use-case-diagram" className="text-primary hover:underline text-sm">
+                  View Use Case Diagram Examples →
+                </Link>
               </CardContent>
             </Card>
             <Card>
@@ -108,8 +116,8 @@ export function HomePageSEO() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Link href="/blog/activity-diagrams-for-workflow-modeling" className="text-primary hover:underline text-sm">
-                  Learn Activity Diagrams →
+                <Link href="/gallery/activity-diagram" className="text-primary hover:underline text-sm">
+                  View Activity Diagram Examples →
                 </Link>
               </CardContent>
             </Card>
@@ -190,6 +198,42 @@ export function HomePageSEO() {
           </div>
         </section>
 
+        <section className="mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-6">Key Features</h2>
+          <div className="prose prose-sm sm:prose-base max-w-none text-muted-foreground space-y-4">
+            <p>
+              <strong>Real-Time Preview:</strong> See your diagrams update instantly as you type, with support for PlantUML and Mermaid syntax.
+            </p>
+            <p>
+              <strong>AI-Powered Code Generation:</strong> Our intelligent AI assistant can generate UML diagram code from natural language, helping you create diagrams faster than ever before.
+            </p>
+            <p>
+              <strong>Multiple Diagram Types:</strong> Support for class diagrams, sequence diagrams, activity diagrams, state diagrams, use case diagrams, and more.
+            </p>
+            <p>
+              <strong>Template Library:</strong> Access a curated collection of pre-built diagram templates to jumpstart your projects.
+            </p>
+            <p>
+              <strong>Export Options:</strong> Download your diagrams as PNG or SVG files for use in documentation, presentations, and reports.
+            </p>
+            <p>
+              <strong>Modern Interface:</strong> A clean, developer-focused design inspired by tools like VS Code and Linear, ensuring a familiar and productive experience.
+            </p>
+          </div>
+        </section>
+
+        <section className="mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-6">Our Mission</h2>
+          <div className="prose prose-sm sm:prose-base max-w-none text-muted-foreground space-y-4">
+            <p>
+              At UML Diagram Studio, our mission is to democratize software diagramming by providing a free, accessible, and powerful tool that eliminates the barriers to creating professional UML diagrams. We believe that visual documentation is essential for effective software development and communication, and we are committed to making it easier for developers worldwide to create, share, and collaborate on system designs.
+            </p>
+            <p>
+              Learn more on our <Link href="/about" className="text-primary hover:underline">about page</Link>, or reach us through the <Link href="/contact" className="text-primary hover:underline">contact page</Link>.
+            </p>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section className="mb-8">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-6">Frequently Asked Questions</h2>
@@ -244,8 +288,14 @@ export function HomePageSEO() {
             Start using our free UML diagram tool now. No sign-up required, no credit card needed. Create professional UML diagrams in minutes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/gallery">
+            <Link href="#editor">
               <Button size="lg">
+                Open the free UML diagram tool
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
+            <Link href="/gallery">
+              <Button size="lg" variant="outline">
                 Browse Examples
                 <Image className="ml-2 w-4 h-4" />
               </Button>

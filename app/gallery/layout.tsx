@@ -7,8 +7,9 @@ import {
 import { SITE_URL } from "@/lib/seo/config";
 
 export const metadata: Metadata = {
-  title: "UML Diagram Gallery - Professional Examples & Templates",
-  description: "Browse our collection of UML diagram examples with detailed information, use cases, components, and step-by-step guides on how to create them.",
+  title: { absolute: "UML Diagram Examples and Templates" },
+  description:
+    "Browse UML diagram examples: class, sequence, activity, and use case diagrams with step-by-step PlantUML guides.",
   keywords: [
     "uml diagram",
     "uml diagram examples",

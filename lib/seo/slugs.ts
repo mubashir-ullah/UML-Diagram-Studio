@@ -31,3 +31,11 @@ export function isBlogSlugValid(slug: string): boolean {
 export function isGallerySlugValid(slug: string): boolean {
   return slug in galleryItemsData;
 }
+
+export function getBlogPostBySlug(slug: string) {
+  return Object.values(blogPostsData).find((post) => post?.slug === slug) ?? null;
+}
+
+export function getAllBlogPosts() {
+  return Object.values(blogPostsData).filter((post) => !!post?.slug);
+}

@@ -17,93 +17,19 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-interface BlogPost {
+import { blogPostsData } from "@/lib/data/blog-posts-data";
+
+const blogPosts = Object.values(blogPostsData) as Array<{
   id: string;
   slug: string;
   title: string;
   description: string;
-  content: string;
   author: string;
   date: string;
   readTime: string;
   category: string;
   tags: string[];
-}
-
-const blogPosts: BlogPost[] = [
-  {
-    id: "1",
-    slug: "getting-started-with-uml-diagrams",
-    title: "Getting Started with UML Diagrams",
-    description: "Learn the fundamentals of UML diagramming and how to create your first class diagram using PlantUML syntax.",
-    content: "UML (Unified Modeling Language) is a standardized modeling language used to visualize the design of a system. In this comprehensive guide, we'll explore the basics of UML diagrams and how you can leverage PlantUML to create professional diagrams quickly...",
-    author: "Mubashir",
-    date: "2025-12-01",
-    readTime: "5 min read",
-    category: "Tutorial",
-    tags: ["UML", "PlantUML", "Beginner"]
-  },
-  {
-    id: "2",
-    slug: "mastering-sequence-diagrams",
-    title: "Mastering Sequence Diagrams",
-    description: "Comprehensive guide to UML sequence diagrams: Learn how to create, read, and master sequence diagrams for system design, software architecture, and object interactions using PlantUML.",
-    content: "Sequence diagrams are one of the most powerful tools in a software architect's toolkit. They help visualize the flow of messages between objects over time, making it easier to understand complex system interactions. In this comprehensive guide, you'll learn everything you need to know about creating effective sequence diagrams that communicate your system design clearly...",
-    author: "Mubashir",
-    date: "2025-12-02",
-    readTime: "12 min read",
-    category: "Advanced",
-    tags: ["Sequence Diagrams", "UML Sequence Diagrams", "System Design", "Software Architecture", "PlantUML", "Object Interaction", "Interaction Diagrams", "Message Flow"]
-  },
-  {
-    id: "3",
-    slug: "ai-powered-diagram-generation",
-    title: "AI-Powered Diagram Generation",
-    description: "Discover how AI-powered UML diagram generators and tools can transform natural language descriptions into professional UML diagrams. Learn about the best AI diagram tools for creating class diagrams, sequence diagrams, use case diagrams, and more.",
-    content: "The integration of AI into diagramming tools has revolutionized how developers create visual representations of their systems. With AI-powered UML diagram generators, you can now describe your system in plain English and get a complete, professional UML diagram in seconds. This comprehensive guide explores how AI is transforming the way we create UML diagrams, from class diagrams and sequence diagrams to use case diagrams and activity diagrams...",
-    author: "Mubashir",
-    date: "2025-12-02",
-    readTime: "14 min read",
-    category: "AI",
-    tags: ["AI", "UML Diagram Generator", "UML Diagram Tool", "UML Diagram Maker", "UML Diagram Creator", "UML Diagram Online", "Class Diagram", "Sequence Diagram", "Use Case Diagram", "Activity Diagram", "Automation", "Productivity"]
-  },
-  {
-    id: "4",
-    slug: "best-practices-for-class-diagrams",
-    title: "Best Practices for Class Diagrams",
-    description: "Master UML class diagram best practices: Learn how to create clear, maintainable class diagrams with proper UML notation, symbols, and relationships. Essential guide for software engineering and system design.",
-    content: "Creating effective class diagrams requires more than just knowing the syntax. It's about understanding relationships, choosing the right level of detail, and following conventions that make your diagrams readable and maintainable. This comprehensive guide covers industry best practices for creating professional UML class diagrams that effectively communicate your software design in software engineering projects...",
-    author: "Mubashir",
-    date: "2025-12-02",
-    readTime: "15 min read",
-    category: "Best Practices",
-    tags: ["Class Diagrams", "UML Class Diagram", "UML Diagram", "UML Diagram Notation", "UML Diagram Symbols", "UML Diagram in Software Engineering", "Design", "Best Practices", "Software Architecture"]
-  },
-  {
-    id: "5",
-    slug: "activity-diagrams-for-workflow-modeling",
-    title: "Activity Diagrams for Workflow Modeling",
-    description: "Explore how activity diagrams can help you model business processes and system workflows effectively.",
-    content: "Activity diagrams are excellent for modeling workflows, business processes, and the flow of control in your system. They provide a visual representation of activities and the transitions between them, making complex processes easier to understand and communicate.",
-    author: "Mubashir",
-    date: "2025-12-02",
-    readTime: "15 min read",
-    category: "Tutorial",
-    tags: ["Activity Diagrams", "Workflow", "Business Process", "UML", "PlantUML", "Process Modeling", "Workflow Design"]
-  },
-  {
-    id: "6",
-    slug: "state-diagrams-modeling-system-behavior",
-    title: "State Diagrams: Modeling System Behavior",
-    description: "Understand how state diagrams can help you model the behavior and lifecycle of objects in your system.",
-    content: "State diagrams are crucial for modeling the dynamic behavior of systems. They show how an object transitions between different states in response to events, making them essential for understanding complex state machines...",
-    author: "Mubashir",
-    date: "2025-12-02",
-    readTime: "18 min read",
-    category: "Advanced",
-    tags: ["State Diagrams", "UML State Diagram", "State Machine", "System Behavior", "Object Lifecycle", "UML", "Software Design", "Behavior Modeling"]
-  }
-];
+}>;
 
 export default function BlogPage() {
   const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
@@ -167,7 +93,7 @@ export default function BlogPage() {
           </Breadcrumb>
           <h1 className="text-3xl font-semibold mb-2">UML Diagram Tutorials and Guides</h1>
           <p className="text-muted-foreground text-sm mb-4">
-            Learn how to create UML diagrams with our comprehensive guides, tutorials, and best practices. Master <Link href="/gallery/class-diagram" className="text-primary hover:underline">class diagrams</Link>, <Link href="/blog/mastering-sequence-diagrams" className="text-primary hover:underline">sequence diagrams</Link>, use case diagrams, <Link href="/blog/activity-diagrams-for-workflow-modeling" className="text-primary hover:underline">activity diagrams</Link>, and more. Explore our <Link href="/gallery" className="text-primary hover:underline">diagram gallery</Link> for examples.
+            Learn how to create UML diagrams with our comprehensive guides, tutorials, and best practices. Master <Link href="/gallery/class-diagram" className="text-primary hover:underline">class diagrams</Link>, <Link href="/gallery/sequence-diagram" className="text-primary hover:underline">sequence diagrams</Link>, <Link href="/blog/use-case-diagrams-guide" className="text-primary hover:underline">use case diagrams</Link>, <Link href="/gallery/activity-diagram" className="text-primary hover:underline">activity diagrams</Link>, and <Link href="/blog/plantuml-online" className="text-primary hover:underline">PlantUML online</Link>. Explore our <Link href="/gallery" className="text-primary hover:underline">diagram gallery</Link> or open the <Link href="/" className="text-primary hover:underline">free UML diagram tool</Link>.
           </p>
           <h2 className="text-xl font-semibold mb-4 mt-6">Learn How to Create UML Diagrams</h2>
           

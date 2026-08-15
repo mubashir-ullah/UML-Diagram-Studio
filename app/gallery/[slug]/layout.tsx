@@ -16,17 +16,28 @@ const diagramMetadata: Record<
   }
 > = {
   "class-diagram": {
-    title: "UML Class Diagram - Complete Guide, Examples & Tutorial",
+    title: "UML Class Diagram - Complete Guide, Examples and Tutorial",
     description:
       "Complete guide to UML class diagrams. Learn class diagram notation, symbols, examples, and how to create class diagrams for software engineering projects.",
-    keywords: [
-      "uml class diagram",
-      "class diagram",
-      "uml diagram",
-      "uml diagram symbols",
-      "uml diagram notation",
-      "uml diagram in software engineering",
-    ],
+    keywords: ["uml class diagram", "class diagram", "uml diagram notation"],
+  },
+  "sequence-diagram": {
+    title: "UML Sequence Diagram Example and How to Create One",
+    description:
+      "Sequence diagram example with PlantUML. Learn lifelines, messages, and how to create a sequence diagram in a free online UML tool.",
+    keywords: ["sequence diagram", "uml sequence diagram", "plantuml sequence"],
+  },
+  "activity-diagram": {
+    title: "UML Activity Diagram Example and Workflow Guide",
+    description:
+      "Activity diagram example for workflows and business processes. Create activity diagrams online with PlantUML in UML Diagram Studio.",
+    keywords: ["activity diagram", "uml activity diagram", "workflow diagram"],
+  },
+  "use-case-diagram": {
+    title: "UML Use Case Diagram Example and Tutorial",
+    description:
+      "Use case diagram example with actors, system boundary, and goals. Create use case diagrams online with PlantUML.",
+    keywords: ["use case diagram", "uml use case", "actors and use cases"],
   },
 };
 
@@ -49,7 +60,7 @@ export async function generateMetadata({
   const url = `${SITE_URL}/gallery/${slug}`;
 
   return {
-    title: meta.title,
+    title: { absolute: meta.title },
     description: meta.description,
     keywords: meta.keywords,
     metadataBase: new URL(SITE_URL),

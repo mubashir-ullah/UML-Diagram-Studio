@@ -6,7 +6,6 @@ import "./globals.css";
 import {
   getOrganizationSchema,
   getWebSiteSchema,
-  getSoftwareApplicationSchema,
   generateStructuredDataScript,
 } from "@/lib/seo/structured-data";
 import { SITE_URL } from "@/lib/seo/config";
@@ -25,34 +24,19 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "UML Diagram Studio - AI Powered UML Diagram Generation Tool",
+    default: "Free UML Diagram Tool Online | Class, Sequence, Use Case",
     template: "%s | UML Diagram Studio",
   },
-  description: "Create professional UML diagrams online for free. Our tool supports class, sequence, activity, and use case diagrams. Start creating UML diagrams now!",
-  keywords: [
-    "uml diagram",
-    "uml diagram tool",
-    "uml diagram generator",
-    "uml diagram online",
-    "uml diagram maker",
-    "uml diagram creator",
-    "free uml diagram tool",
-    "create uml diagram",
-    "class diagram",
-    "sequence diagram",
-    "use case diagram",
-    "activity diagram",
-  ],
+  description:
+    "Create UML diagrams online for free. Class, sequence, activity, and use case diagrams with live preview, PlantUML, and AI. No install.",
   authors: [{ name: "Mubashir" }],
   creator: "UML Diagram Studio",
   publisher: "UML Diagram Studio",
   metadataBase: new URL(SITE_URL),
-  alternates: {
-    canonical: SITE_URL,
-  },
   openGraph: {
-    title: "UML Diagram - Free Online UML Diagram Tool | UML Diagram Studio",
-    description: "Create professional UML diagrams online for free. Our UML diagram tool supports class, sequence, activity, and use case diagrams. Start creating UML diagrams now!",
+    title: "Free UML Diagram Tool Online | Class, Sequence, Use Case",
+    description:
+      "Create UML diagrams online for free. Class, sequence, activity, and use case diagrams with live preview, PlantUML, and AI. No install.",
     url: SITE_URL,
     siteName: "UML Diagram Studio",
     type: "website",
@@ -61,15 +45,16 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "UML Diagram Studio - Free Online UML Diagram Tool",
+        alt: "Free UML diagram tool online with live PlantUML preview",
       },
     ],
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "UML Diagram - Free Online UML Diagram Tool",
-    description: "Create professional UML diagrams online for free. Our UML diagram tool supports class, sequence, activity, and use case diagrams.",
+    title: "Free UML Diagram Tool Online | Class, Sequence, Use Case",
+    description:
+      "Create UML diagrams online for free. Class, sequence, activity, and use case diagrams with live preview, PlantUML, and AI. No install.",
     images: [`${SITE_URL}/og-image.png`],
     creator: "@umldiagram",
   },
@@ -122,13 +107,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: generateStructuredDataScript(getWebSiteSchema()),
-          }}
-        />
-        <Script
-          id="software-application-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: generateStructuredDataScript(getSoftwareApplicationSchema()),
           }}
         />
         {/* Google AdSense */}

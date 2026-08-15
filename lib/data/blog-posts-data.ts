@@ -1,8 +1,10 @@
+import { extraBlogPosts } from "./blog-posts-extra";
+
 export const blogPostsData: Record<string, any> = {
   "1": {
     id: "1",
     slug: "getting-started-with-uml-diagrams",
-    title: "Getting Started with UML Diagrams",
+    title: "Getting Started with UML Diagrams: First Class Diagram in PlantUML",
     description: "Learn the fundamentals of UML diagramming and how to create your first class diagram using PlantUML syntax.",
     content: "UML (Unified Modeling Language) is a standardized modeling language used to visualize the design of a system.",
     fullContent: "UML (Unified Modeling Language) is a standardized modeling language used to visualize the design of a system. In this comprehensive guide, we'll explore the basics of UML diagrams and how you can leverage PlantUML to create professional diagrams quickly and efficiently.",
@@ -84,7 +86,7 @@ Library "1" --> "*" Member : manages
       },
       {
         title: "Next Steps",
-        content: "Now that you understand the basics of UML and PlantUML, here's what you can do next:\n\n1. **Practice**: Create diagrams for simple systems you're familiar with (e.g., a shopping cart, a blog system)\n2. **Explore Other Diagram Types**: Try creating [sequence diagrams](/blog/mastering-sequence-diagrams), use case diagrams, or [activity diagrams](/blog/activity-diagrams-for-workflow-modeling)\n3. **Learn Advanced Features**: Explore PlantUML's advanced features like themes, styling, and macros\n4. **Integrate with Your Workflow**: Use PlantUML in your documentation, README files, or design documents\n5. **Join the Community**: Connect with other UML users to learn tips and best practices\n6. **Read More**: Explore our other blog posts on specific diagram types and advanced techniques\n\nRemember, UML is a tool to help you think about and communicate design. The more you practice, the more natural it will become!"
+        content: "Now that you understand the basics of UML and PlantUML, here's what you can do next:\n\n1. **Practice in the [free UML diagram tool](/)**: Create diagrams for simple systems you're familiar with (e.g., a shopping cart, a blog system)\n2. **Explore Other Diagram Types**: Try creating [sequence diagrams](/blog/mastering-sequence-diagrams), [use case diagrams](/blog/use-case-diagrams-guide), or [activity diagrams](/blog/activity-diagrams-for-workflow-modeling)\n3. **Learn Advanced Features**: Explore PlantUML's advanced features like themes, styling, and macros. See [PlantUML online](/blog/plantuml-online) if you want text-to-UML in the browser.\n4. **Integrate with Your Workflow**: Use PlantUML in your documentation, README files, or design documents\n5. **Read More**: Explore our other blog posts on specific diagram types and advanced techniques\n\nRemember, UML is a tool to help you think about and communicate design. The more you practice, the more natural it will become!"
       }
     ]
   },
@@ -693,3 +695,5 @@ endif
     ]
   }
 };
+
+Object.assign(blogPostsData, extraBlogPosts);

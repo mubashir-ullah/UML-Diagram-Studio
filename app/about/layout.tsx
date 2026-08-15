@@ -7,8 +7,9 @@ import {
 import { SITE_URL } from "@/lib/seo/config";
 
 export const metadata: Metadata = {
-  title: "About UML Diagram Studio - Your Free UML Diagram Tool",
-  description: "Learn about UML Diagram Studio, the free online UML diagram tool for creating professional diagrams with AI assistance. Discover our mission and features.",
+  title: { absolute: "About UML Diagram Studio" },
+  description:
+    "UML Diagram Studio is a free browser UML diagram tool with PlantUML, Mermaid, live preview, AI chat, and PNG or SVG export.",
   keywords: [
     "uml diagram",
     "uml diagram tool",

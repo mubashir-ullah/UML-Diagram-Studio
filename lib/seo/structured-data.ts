@@ -16,14 +16,6 @@ export interface WebSiteSchema {
   name: string;
   url: string;
   description: string;
-  potentialAction?: {
-    "@type": string;
-    target: {
-      "@type": string;
-      urlTemplate: string;
-    };
-    "query-input": string;
-  };
 }
 
 export interface SoftwareApplicationSchema {
@@ -132,14 +124,6 @@ export function getWebSiteSchema(): WebSiteSchema {
     name: "UML Diagram Studio",
     url: SITE_URL,
     description: "Free online UML diagram tool for creating professional diagrams.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE_URL}/blog?search={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 

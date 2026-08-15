@@ -245,10 +245,10 @@ export default function AboutPage() {
               <div className="flex items-center gap-2 sm:gap-3 mb-4">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground flex-shrink-0" />
                 <a
-                  href="mailto:contact@umldiagramstudio.com"
+                  href="mailto:contact@umldiagram.app"
                   className="text-primary hover:underline text-sm sm:text-base break-all"
                 >
-                  contact@umldiagramstudio.com
+                  contact@umldiagram.app
                 </a>
               </div>
             </div>

@@ -183,8 +183,8 @@ export function TopBar({
                     <p className="text-sm text-muted-foreground mb-3">
                       Behavioral diagrams showing interactions between objects over time
                     </p>
-                    <Link href="/blog/mastering-sequence-diagrams" onClick={() => setIsHelpOpen(false)} className="text-primary hover:underline text-sm">
-                      Learn Sequence Diagrams →
+                    <Link href="/gallery/sequence-diagram" onClick={() => setIsHelpOpen(false)} className="text-primary hover:underline text-sm">
+                      View Sequence Diagram Examples →
                     </Link>
                   </div>
                   <div className="border rounded-lg p-4">
@@ -195,8 +195,8 @@ export function TopBar({
                     <p className="text-sm text-muted-foreground mb-3">
                       Workflow diagrams modeling business processes and system workflows
                     </p>
-                    <Link href="/blog/activity-diagrams-for-workflow-modeling" onClick={() => setIsHelpOpen(false)} className="text-primary hover:underline text-sm">
-                      Learn Activity Diagrams →
+                    <Link href="/gallery/activity-diagram" onClick={() => setIsHelpOpen(false)} className="text-primary hover:underline text-sm">
+                      View Activity Diagram Examples →
                     </Link>
                   </div>
                   <div className="border rounded-lg p-4">
@@ -207,7 +207,9 @@ export function TopBar({
                     <p className="text-sm text-muted-foreground mb-3">
                       Functional diagrams showing system functionality from a user's perspective
                     </p>
-                    <p className="text-sm text-muted-foreground">Coming soon</p>
+                    <Link href="/gallery/use-case-diagram" onClick={() => setIsHelpOpen(false)} className="text-primary hover:underline text-sm">
+                      View Use Case Diagram Examples →
+                    </Link>
                   </div>
                 </div>
               </section>
@@ -413,6 +415,16 @@ export function TopBar({
             About
           </Button>
         </Link>
+        <Link href="/contact">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-xs sm:text-sm"
+            data-testid="button-contact"
+          >
+            Contact
+          </Button>
+        </Link>
         <a
           href="https://github.com/mubashir-ullah/UML-Diagram-Studio"
           target="_blank"
@@ -468,6 +480,11 @@ export function TopBar({
           <DropdownMenuItem asChild>
             <Link href="/about" className="flex items-center">
               About
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/contact" className="flex items-center">
+              Contact
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />

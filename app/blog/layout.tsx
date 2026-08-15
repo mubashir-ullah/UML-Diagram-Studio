@@ -7,8 +7,9 @@ import {
 import { SITE_URL } from "@/lib/seo/config";
 
 export const metadata: Metadata = {
-  title: "UML Diagram Blog - Tutorials, Guides & Best Practices",
-  description: "Learn how to create UML diagrams with our comprehensive guides, tutorials, and best practices. Master class diagrams, sequence diagrams, and more.",
+  title: { absolute: "UML Diagram Tutorials and Guides" },
+  description:
+    "UML tutorials for class, sequence, activity, use case, and PlantUML. Learn how to create diagrams and open them in a free online tool.",
   keywords: [
     "uml diagram",
     "uml diagram tutorial",

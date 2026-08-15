@@ -2,14 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Script from "next/script";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Mail, Check } from "lucide-react";
-import {
-  generateStructuredDataScript,
-} from "@/lib/seo/structured-data";
-import { SITE_URL } from "@/lib/seo/config";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -53,22 +48,7 @@ export function Footer() {
   };
   const currentYear = new Date().getFullYear();
 
-  const navigationSchema = {
-    "@context": "https://schema.org",
-    "@type": "SiteNavigationElement",
-    name: "Main Navigation",
-    url: SITE_URL,
-  };
-
   return (
-    <>
-      <Script
-        id="footer-navigation-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: generateStructuredDataScript(navigationSchema),
-        }}
-      />
       <footer className="w-full border-t border-border mt-auto">
         <div className="container mx-auto px-4 py-8 sm:py-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
@@ -96,6 +76,21 @@ export function Footer() {
                     About
                   </Link>
                 </li>
+                <li>
+                  <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Privacy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Terms
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -109,13 +104,13 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog/mastering-sequence-diagrams" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Sequence Diagrams
+                  <Link href="/blog/use-case-diagrams-guide" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Use Case Diagrams
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog/best-practices-for-class-diagrams" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Best Practices
+                  <Link href="/blog/plantuml-online" className="text-muted-foreground hover:text-foreground transition-colors">
+                    PlantUML Online
                   </Link>
                 </li>
                 <li>
@@ -136,18 +131,18 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog/mastering-sequence-diagrams" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link href="/gallery/sequence-diagram" className="text-muted-foreground hover:text-foreground transition-colors">
                     Sequence Diagrams
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog/activity-diagrams-for-workflow-modeling" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link href="/gallery/activity-diagram" className="text-muted-foreground hover:text-foreground transition-colors">
                     Activity Diagrams
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog/state-diagrams-modeling-system-behavior" className="text-muted-foreground hover:text-foreground transition-colors">
-                    State Diagrams
+                  <Link href="/gallery/use-case-diagram" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Use Case Diagrams
                   </Link>
                 </li>
               </ul>
@@ -194,13 +189,19 @@ export function Footer() {
           </div>
 
           <div className="border-t border-border pt-6">
-            <p className="text-center text-sm text-muted-foreground">
-              © {currentYear} UML Diagram Studio. All rights reserved.
-            </p>
+          <p className="text-center text-sm text-muted-foreground">
+            © {currentYear} UML Diagram Studio. All rights reserved.{" "}
+            <Link href="/privacy" className="hover:text-foreground">
+              Privacy
+            </Link>
+            {" · "}
+            <Link href="/terms" className="hover:text-foreground">
+              Terms
+            </Link>
+          </p>
           </div>
         </div>
       </footer>
-    </>
   );
 }
 
